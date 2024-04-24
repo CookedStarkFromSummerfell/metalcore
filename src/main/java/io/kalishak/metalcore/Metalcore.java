@@ -11,6 +11,6 @@ public class Metalcore {
 
     public Metalcore(IEventBus eventBus) {
 
-        ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, MetalcoreConfig.SERVER_SPEC);
+        ModLoadingContext.get().getActiveContainer().registerConfig(ModConfig.Type.SERVER, MetalcoreConfig.SERVER_SPEC);
     }
 }
