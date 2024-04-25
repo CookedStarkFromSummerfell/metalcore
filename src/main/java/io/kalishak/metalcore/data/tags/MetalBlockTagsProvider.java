@@ -4,7 +4,6 @@ import io.kalishak.metalcore.tags.MetalBlockTags;
 import io.kalishak.metalcore.world.level.block.MetalcoreBlocks;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
-import net.minecraft.tags.BlockTags;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -46,5 +45,17 @@ public class MetalBlockTagsProvider extends BlockTagsProvider {
                 .addTag(MetalBlockTags.STORAGE_BLOCKS_RAW_LEAD)
                 .addTag(MetalBlockTags.STORAGE_BLOCKS_SILVER)
                 .addTag(MetalBlockTags.STORAGE_BLOCKS_RAW_SILVER);
+
+        tag(Tags.Blocks.ORES_IN_GROUND_DEEPSLATE)
+                .add(MetalcoreBlocks.DEEPSLATE_ALUMINUM_ORE.get());
+
+        tag(Tags.Blocks.ORES_IN_GROUND_STONE)
+                .add(MetalcoreBlocks.ALUMINUM_ORE.get());
+
+        tag(Tags.Blocks.ORE_RATES_DENSE)
+                .add(MetalcoreBlocks.ALUMINUM_ORE.get());
+
+        tag(Tags.Blocks.ORE_RATES_SINGULAR)
+                .add(MetalcoreBlocks.DEEPSLATE_ALUMINUM_ORE.get());
     }
 }

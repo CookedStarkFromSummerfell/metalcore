@@ -50,5 +50,21 @@ public class MetalItemTagsProvider extends ItemTagsProvider {
                 .addTag(MetalItemTags.RAW_MATERIALS_TIN)
                 .addTag(MetalItemTags.RAW_MATERIALS_LEAD)
                 .addTag(MetalItemTags.RAW_MATERIALS_SILVER);
+
+        tag(Tags.Items.STORAGE_BLOCKS)
+                .addTag(MetalItemTags.STORAGE_BLOCKS_ALUMINUM)
+                .addTag(MetalItemTags.STORAGE_BLOCKS_RAW_ALUMINUM)
+                .addTag(MetalItemTags.STORAGE_BLOCKS_TIN)
+                .addTag(MetalItemTags.STORAGE_BLOCKS_RAW_TIN)
+                .addTag(MetalItemTags.STORAGE_BLOCKS_LEAD)
+                .addTag(MetalItemTags.STORAGE_BLOCKS_RAW_LEAD)
+                .addTag(MetalItemTags.STORAGE_BLOCKS_SILVER)
+                .addTag(MetalItemTags.STORAGE_BLOCKS_RAW_SILVER);
+
+        tag(Tags.Items.ORE_RATES_DENSE)
+                .add(MetalcoreItems.ALUMINUM_ORE.get());
+
+        tag(Tags.Items.ORE_RATES_SINGULAR)
+                .add(MetalcoreItems.DEEPSLATE_ALUMINUM_ORE.get());
     }
 }

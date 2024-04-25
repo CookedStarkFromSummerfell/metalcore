@@ -1,17 +1,9 @@
 package io.kalishak.metalcore.data.tags;
 
-import net.minecraft.core.HolderLookup;
-import net.minecraft.data.DataGenerator;
 import net.minecraft.data.DataProvider;
-import net.minecraft.data.PackOutput;
-import net.minecraft.data.tags.TagsProvider;
-import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
-import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
-import org.jetbrains.annotations.Nullable;
 
-import java.util.concurrent.CompletableFuture;
 import java.util.function.BiConsumer;
 
 public class MetalTagsProvider {
