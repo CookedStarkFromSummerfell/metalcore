@@ -1,0 +1,12 @@
+{
+  "blocks": "c:storage_blocks/coal",
+  "can_oxidize": false,
+  "data": {
+    "density": 2.9,
+    "hardening_time": 355,
+    "melting_temperature": 3555.0
+  },
+  "is_toxic": false,
+  "items": "c:storage_blocks/coal",
+  "molten_fluids": "c:hidden_from_recipe_viewers"
+}

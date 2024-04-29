@@ -1,0 +1,14 @@
+{
+  "values": [
+    "metalcore:lead_ore",
+    "metalcore:deepslate_lead_ore",
+    "metalcore:tin_ore",
+    "metalcore:deepslate_tin_ore",
+    "metalcore:raw_lead_block",
+    "metalcore:lead_block",
+    "metalcore:raw_waxed_lead_block",
+    "metalcore:waxed_lead_block",
+    "metalcore:raw_tin_block",
+    "metalcore:tin_block"
+  ]
+}

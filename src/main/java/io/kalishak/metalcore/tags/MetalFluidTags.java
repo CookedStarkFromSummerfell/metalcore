@@ -7,15 +7,16 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.material.Fluid;
 
 public class MetalFluidTags {
-    public static final TagKey<Fluid> MOLTEN_ALUMINUM = commonTag("molten_aluminum");
-    public static final TagKey<Fluid> MOLTEN_BRONZE = commonTag("molten_bronze");
-    public static final TagKey<Fluid> MOLTEN_COPPER = commonTag("molten_copper");
-    public static final TagKey<Fluid> MOLTEN_GOLD = commonTag("molten_gold");
-    public static final TagKey<Fluid> MOLTEN_IRON = commonTag("molten_iron");
-    public static final TagKey<Fluid> MOLTEN_LEAD = commonTag("molten_lead");
-    public static final TagKey<Fluid> MOLTEN_TIN = commonTag("molten_tin");
-    public static final TagKey<Fluid> MOLTEN_SILVER = commonTag("molten_silver");
-    public static final TagKey<Fluid> MOLTEN_STEEL = commonTag("molten_steel");
+    public static final TagKey<Fluid> MOLTEN_ALUMINUM = commonTag("molten/aluminum");
+    public static final TagKey<Fluid> MOLTEN_BRONZE = commonTag("molten/bronze");
+    public static final TagKey<Fluid> MOLTEN_COPPER = commonTag("molten/copper");
+    public static final TagKey<Fluid> MOLTEN_GOLD = commonTag("molten/gold");
+    public static final TagKey<Fluid> MOLTEN_IRON = commonTag("molten/iron");
+    public static final TagKey<Fluid> MOLTEN_LEAD = commonTag("molten/lead");
+    public static final TagKey<Fluid> MOLTEN_NETHERITE = commonTag("molten/netherite");
+    public static final TagKey<Fluid> MOLTEN_STEEL = commonTag("molten/steel");
+    public static final TagKey<Fluid> MOLTEN_SILVER = commonTag("molten/silver");
+    public static final TagKey<Fluid> MOLTEN_TIN = commonTag("molten/tin");
 
     private static TagKey<Fluid> commonTag(String tagName) {
         return FluidTags.create(new ResourceLocation("c", tagName));

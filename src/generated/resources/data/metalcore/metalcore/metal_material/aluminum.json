@@ -1,0 +1,12 @@
+{
+  "blocks": "metalcore:metals/aluminum",
+  "can_oxidize": false,
+  "data": {
+    "density": 2.7,
+    "hardening_time": 45,
+    "melting_temperature": 933.0
+  },
+  "is_toxic": false,
+  "items": "metalcore:metals/aluminum",
+  "molten_fluids": "c:molten/aluminum"
+}

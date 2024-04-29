@@ -1,0 +1,9 @@
+{
+  "values": [
+    "#c:raw_blocks/aluminum",
+    "#c:raw_blocks/lead",
+    "#c:raw_blocks/silicon",
+    "#c:raw_blocks/silver",
+    "#c:raw_blocks/tin"
+  ]
+}

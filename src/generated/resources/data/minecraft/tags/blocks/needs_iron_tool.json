@@ -1,0 +1,16 @@
+{
+  "values": [
+    "metalcore:silicon_ore",
+    "metalcore:aluminum_ore",
+    "metalcore:deepslate_aluminum_ore",
+    "metalcore:deepslate_silicon_ore",
+    "metalcore:silver_ore",
+    "metalcore:deepslate_silver_ore",
+    "metalcore:end_silver_ore",
+    "metalcore:raw_aluminum_block",
+    "metalcore:aluminum_block",
+    "metalcore:raw_silicon_block",
+    "metalcore:raw_silver_block",
+    "metalcore:silver_block"
+  ]
+}

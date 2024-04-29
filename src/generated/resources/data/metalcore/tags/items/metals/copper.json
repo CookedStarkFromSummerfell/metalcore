@@ -1,0 +1,11 @@
+{
+  "values": [
+    "minecraft:copper_ore",
+    "minecraft:deepslate_copper_ore",
+    "minecraft:copper_block",
+    "minecraft:raw_copper_block",
+    "minecraft:raw_copper",
+    "minecraft:copper_ingot",
+    "metalcore:copper_dust"
+  ]
+}

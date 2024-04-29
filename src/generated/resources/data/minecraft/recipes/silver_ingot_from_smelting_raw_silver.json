@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.4,
+  "group": "silver",
+  "ingredient": {
+    "item": "metalcore:raw_silver"
+  },
+  "result": {
+    "count": 1,
+    "id": "metalcore:silver_ingot"
+  }
+}

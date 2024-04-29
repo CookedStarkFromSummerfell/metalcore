@@ -1,0 +1,12 @@
+{
+  "values": [
+    "#metalcore:metals/aluminum",
+    "#metalcore:metals/copper",
+    "#metalcore:metals/gold",
+    "#metalcore:metals/iron",
+    "#metalcore:metals/lead",
+    "#metalcore:metals/netherite",
+    "#metalcore:metals/silver",
+    "#metalcore:metals/tin"
+  ]
+}

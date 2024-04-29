@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.3,
+  "group": "silicon",
+  "ingredient": {
+    "item": "metalcore:deepslate_silicon_ore"
+  },
+  "result": {
+    "count": 1,
+    "id": "metalcore:raw_silicon"
+  }
+}

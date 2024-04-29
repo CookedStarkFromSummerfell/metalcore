@@ -1,0 +1,12 @@
+{
+  "blocks": "metalcore:metals/silver",
+  "can_oxidize": false,
+  "data": {
+    "density": 10.4,
+    "hardening_time": 74,
+    "melting_temperature": 1234.0
+  },
+  "is_toxic": false,
+  "items": "metalcore:metals/silver",
+  "molten_fluids": "c:molten/silver"
+}

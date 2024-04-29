@@ -6,8 +6,8 @@ import net.neoforged.neoforge.data.event.GatherDataEvent;
 
 import java.util.function.BiConsumer;
 
-public class MetalTagsProvider {
-    public static  void init(GatherDataEvent event, String modId, BiConsumer<Boolean, DataProvider> consumer) {
+public interface MetalTagsProvider {
+    static void init(GatherDataEvent event, String modId, BiConsumer<Boolean, DataProvider> consumer) {
         BlockTagsProvider blockTagsProvider = new MetalBlockTagsProvider(
                 event.getGenerator().getPackOutput(),
                 event.getLookupProvider(),
