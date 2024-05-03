@@ -1,6 +1,7 @@
 package io.kalishak.metalcore.data;
 
 import io.kalishak.metalcore.Metalcore;
+import io.kalishak.metalcore.data.client.CommonLanguageProvider;
 import io.kalishak.metalcore.data.client.MetalBlockStatesProvider;
 import io.kalishak.metalcore.data.client.MetalItemModelsProvider;
 import io.kalishak.metalcore.data.client.MetalLanguageProvider;
@@ -35,5 +36,7 @@ public class MetalcoreDataGenerators {
         dataGenerator.addProvider(event.includeClient(), new MetalBlockStatesProvider(packOutput, Metalcore.MODID, fileHelper));
         dataGenerator.addProvider(event.includeClient(), new MetalItemModelsProvider(packOutput, Metalcore.MODID, fileHelper));
         dataGenerator.addProvider(event.includeClient(), new MetalLanguageProvider(packOutput, Metalcore.MODID, "en_us"));
+
+        dataGenerator.addProvider(event.includeClient(), new CommonLanguageProvider(packOutput));
     }
 }

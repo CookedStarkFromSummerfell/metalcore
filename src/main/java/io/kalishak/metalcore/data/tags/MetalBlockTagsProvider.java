@@ -137,7 +137,15 @@ public class MetalBlockTagsProvider extends BlockTagsProvider {
                 .add(MetalcoreBlocks.RAW_SILVER_BLOCK.get())
                 .add(MetalcoreBlocks.SILVER_BLOCK.get())
                 .add(MetalcoreBlocks.RAW_TIN_BLOCK.get())
-                .add(MetalcoreBlocks.TIN_BLOCK.get());
+                .add(MetalcoreBlocks.TIN_BLOCK.get())
+                .add(MetalcoreBlocks.COPPER_PIPE.get())
+                .add(MetalcoreBlocks.EXPOSED_COPPER_PIPE.get())
+                .add(MetalcoreBlocks.WEATHERED_COPPER_PIPE.get())
+                .add(MetalcoreBlocks.OXIDIZED_COPPER_PIPE.get())
+                .add(MetalcoreBlocks.COPPER_BELL.get())
+                .add(MetalcoreBlocks.EXPOSED_COPPER_BELL.get())
+                .add(MetalcoreBlocks.WEATHERED_COPPER_BELL.get())
+                .add(MetalcoreBlocks.OXIDIZED_COPPER_BELL.get());
 
         tag(BlockTags.NEEDS_IRON_TOOL)
             .add(MetalcoreBlocks.SILICON_ORE.get())
@@ -151,7 +159,15 @@ public class MetalBlockTagsProvider extends BlockTagsProvider {
                 .add(MetalcoreBlocks.ALUMINUM_BLOCK.get())
                 .add(MetalcoreBlocks.RAW_SILICON_BLOCK.get())
                 .add(MetalcoreBlocks.RAW_SILVER_BLOCK.get())
-                .add(MetalcoreBlocks.SILVER_BLOCK.get());
+                .add(MetalcoreBlocks.SILVER_BLOCK.get())
+                .add(MetalcoreBlocks.COPPER_PIPE.get())
+                .add(MetalcoreBlocks.EXPOSED_COPPER_PIPE.get())
+                .add(MetalcoreBlocks.WEATHERED_COPPER_PIPE.get())
+                .add(MetalcoreBlocks.OXIDIZED_COPPER_PIPE.get())
+                .add(MetalcoreBlocks.COPPER_BELL.get())
+                .add(MetalcoreBlocks.EXPOSED_COPPER_BELL.get())
+                .add(MetalcoreBlocks.WEATHERED_COPPER_BELL.get())
+                .add(MetalcoreBlocks.OXIDIZED_COPPER_BELL.get());
 
         tag(BlockTags.NEEDS_STONE_TOOL)
                 .add(MetalcoreBlocks.LEAD_ORE.get())

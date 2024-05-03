@@ -1,14 +1,16 @@
 package io.kalishak.metalcore.data.client;
 
-import com.google.common.collect.ImmutableList;
 import io.kalishak.metalcore.Metalcore;
-import io.kalishak.metalcore.world.item.TieredToolItem;
+import io.kalishak.metalcore.api.block.SixwayStorageBlock;
+import io.kalishak.metalcore.api.item.TieredToolItem;
+import io.kalishak.metalcore.world.item.MetalcoreItems;
+import io.kalishak.metalcore.world.item.WeatheringCopperShieldItem;
+import io.kalishak.metalcore.world.level.block.CopperBellBlock;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.ItemLike;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -27,12 +29,16 @@ public class MetalItemModelsProvider extends ItemModelProvider {
                 .stream()
                 .filter(entry -> entry.getKey().location().getNamespace().equals(Metalcore.MODID))
                 .map(entry -> entry.getValue().asItem())
+                .filter(offList())
                 .toList();
 
-        for (Item item : items) {
-            if (item instanceof BlockItem) {
-                basicBlock(item);
+        shield(MetalcoreItems.COPPER_SHIELD.get());
 
+        for (Item item : items) {
+            if (item instanceof BlockItem blockItem
+                    && !(blockItem.getBlock() instanceof CopperBellBlock)
+                    && !(blockItem.getBlock() instanceof SixwayStorageBlock<?>)) {
+                basicBlock(item);
             } else {
                 if (item instanceof TieredToolItem) {
                     basicTool(item);
@@ -49,7 +55,7 @@ public class MetalItemModelsProvider extends ItemModelProvider {
     }
 
     private Predicate<Item> offList() {
-        return item -> true;
+        return item -> item instanceof WeatheringCopperShieldItem;
     }
 
     private void basicBlock(Item item) {
@@ -61,5 +67,21 @@ public class MetalItemModelsProvider extends ItemModelProvider {
         getBuilder(name(item))
                 .parent(new ModelFile.UncheckedModelFile(new ResourceLocation("item/handheld")))
                 .texture("layer0", modLoc(name(item)).withSuffix("item/"));
+    }
+
+    private void shield(Item item) {
+        shieldBlocking(item);
+
+        getBuilder(name(item))
+                .parent(new ModelFile.UncheckedModelFile(new ResourceLocation("item/shield")))
+                .override()
+                .predicate(new ResourceLocation("blocking"), 1.0F)
+                .model(new ModelFile.UncheckedModelFile(new ResourceLocation("item/shield_blocking")))
+                .end();
+    }
+
+    private void shieldBlocking(Item item) {
+        getBuilder(name(item) + "_blocking")
+            .parent(new ModelFile.UncheckedModelFile(new ResourceLocation("item/shield_blocking")));
     }
 }

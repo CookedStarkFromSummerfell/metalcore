@@ -1,5 +1,7 @@
 package io.kalishak.metalcore.data.client;
 
+import io.kalishak.metalcore.tags.MetalBlockTags;
+import io.kalishak.metalcore.tags.MetalItemTags;
 import io.kalishak.metalcore.world.item.MetalcoreItems;
 import io.kalishak.metalcore.world.level.block.MetalcoreBlocks;
 import net.minecraft.data.PackOutput;
@@ -37,6 +39,14 @@ public class MetalLanguageProvider extends LanguageProvider {
         addBlock(MetalcoreBlocks.SILVER_BLOCK, "Silver Block");
         addBlock(MetalcoreBlocks.RAW_TIN_BLOCK,  "Raw Tin Block");
         addBlock(MetalcoreBlocks.TIN_BLOCK, "Tin Block");
+        addBlock(MetalcoreBlocks.COPPER_PIPE, "Copper Pipe");
+        addBlock(MetalcoreBlocks.EXPOSED_COPPER_PIPE, "Exposed Copper Pipe");
+        addBlock(MetalcoreBlocks.WEATHERED_COPPER_PIPE, "Weather Copper Pipe");
+        addBlock(MetalcoreBlocks.OXIDIZED_COPPER_PIPE,  "Oxidized Copper Pipe");
+        addBlock(MetalcoreBlocks.COPPER_BELL,  "Copper Bell");
+        addBlock(MetalcoreBlocks.EXPOSED_COPPER_BELL, "Exposed Copper Bell");
+        addBlock(MetalcoreBlocks.WEATHERED_COPPER_BELL,  "Weather Copper Bell");
+        addBlock(MetalcoreBlocks.OXIDIZED_COPPER_BELL,  "Oxidized Copper Bell");
 
         addItem(MetalcoreItems.RAW_ALUMINUM, "Raw Aluminum");
         addItem(MetalcoreItems.ALUMINUM_INGOT, "Aluminum Ingot");
@@ -69,5 +79,33 @@ public class MetalLanguageProvider extends LanguageProvider {
         addItem(MetalcoreItems.STEEL_CHESTPLATE,  "Steel Chestplate");
         addItem(MetalcoreItems.STEEL_LEGGINGS,  "Steel Leggings");
         addItem(MetalcoreItems.STEEL_BOOTS, "Steel Boots");
+        addItem(MetalcoreItems.COPPER_SHIELD, "Copper Shield");
+
+        add(MetalBlockTags.METALS, "Metals");
+        add(MetalBlockTags.METAL_ALUMINUM, "Aluminum Metals");
+        add(MetalBlockTags.METAL_COPPER, "Copper Metals");
+        add(MetalBlockTags.METAL_GOLD, "Gold Metals");
+        add(MetalBlockTags.METAL_IRON, "Iron Metals");
+        add(MetalBlockTags.METAL_LEAD, "Lead Metals");
+        add(MetalBlockTags.METAL_NETHERITE, "Netherite Metals");
+        add(MetalBlockTags.METAL_SILVER, "Silver Metals");
+        add(MetalBlockTags.METAL_TIN, "Tin Metals");
+        add(MetalBlockTags.ALLOYS, "Alloys");
+        add(MetalBlockTags.ALLOY_BRONZE,  "Bronze Alloys");
+        add(MetalBlockTags.ALLOY_STEEL, "Steel Alloys");
+
+        add(MetalItemTags.METALS, "Metals");
+        add(MetalItemTags.METAL_ALUMINUM, "Aluminum Metals");
+        add(MetalItemTags.METAL_COPPER, "Copper Metals");
+        add(MetalItemTags.METAL_GOLD, "Gold Metals");
+        add(MetalItemTags.METAL_IRON, "Iron Metals");
+        add(MetalItemTags.METAL_LEAD, "Lead Metals");
+        add(MetalItemTags.METAL_NETHERITE, "Netherite Metals");
+        add(MetalItemTags.METAL_SILVER, "Silver Metals");
+        add(MetalItemTags.METAL_TIN, "Tin Metals");
+        add(MetalItemTags.ALLOYS, "Alloys");
+        add(MetalItemTags.ALLOY_BRONZE,  "Bronze Alloys");
+        add(MetalItemTags.ALLOY_STEEL, "Steel Alloys");
+        add(MetalItemTags.WEATHERING_ITEM, "Weathering Items");
     }
 }

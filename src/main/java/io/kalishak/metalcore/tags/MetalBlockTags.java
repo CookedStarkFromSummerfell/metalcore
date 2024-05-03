@@ -33,8 +33,9 @@ public class MetalBlockTags {
     public static final TagKey<Block> METAL_SILVER = modTag("metals/silver");
     public static final TagKey<Block> METAL_TIN = modTag("metals/tin");
 
-    public static final TagKey<Block> ALLOY_BRONZE = modTag("metals/bronze");
-    public static final TagKey<Block> ALLOY_STEEL = modTag("metals/steel");
+    public static final TagKey<Block> ALLOYS = modTag("alloys");
+    public static final TagKey<Block> ALLOY_BRONZE = modTag("alloys/bronze");
+    public static final TagKey<Block> ALLOY_STEEL = modTag("alloys/steel");
 
     private static TagKey<Block> commonTag(String tagName) {
         return BlockTags.create(new ResourceLocation("c", tagName));

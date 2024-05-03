@@ -35,6 +35,11 @@ public final class MetalcoreItems {
     public static final DeferredItem<BlockItem> SILVER_BLOCK = ITEMS.registerSimpleBlockItem(MetalcoreBlocks.SILVER_BLOCK);
     public static final DeferredItem<BlockItem> RAW_TIN_BLOCK = ITEMS.registerSimpleBlockItem(MetalcoreBlocks.RAW_TIN_BLOCK);
     public static final DeferredItem<BlockItem> TIN_BLOCK = ITEMS.registerSimpleBlockItem(MetalcoreBlocks.TIN_BLOCK);
+    public static final DeferredItem<WeatheringCopperPipeBlockItem> COPPER_PIPE = ITEMS.register("copper_pipe", () -> new WeatheringCopperPipeBlockItem(MetalcoreBlocks.COPPER_PIPE, new Item.Properties()));
+    public static final DeferredItem<BlockItem> COPPER_BELL = ITEMS.registerSimpleBlockItem(MetalcoreBlocks.COPPER_BELL);
+    public static final DeferredItem<BlockItem> EXPOSED_COPPER_BELL = ITEMS.registerSimpleBlockItem(MetalcoreBlocks.EXPOSED_COPPER_BELL);
+    public static final DeferredItem<BlockItem> WEATHERED_COPPER_BELL = ITEMS.registerSimpleBlockItem(MetalcoreBlocks.WEATHERED_COPPER_BELL);
+    public static final DeferredItem<BlockItem> OXIDIZED_COPPER_BELL = ITEMS.registerSimpleBlockItem(MetalcoreBlocks.OXIDIZED_COPPER_BELL);
 
     public static final DeferredItem<Item> RAW_ALUMINUM = ITEMS.registerSimpleItem("raw_aluminum");
     public static final DeferredItem<Item> ALUMINUM_INGOT = ITEMS.registerSimpleItem("aluminum_ingot");
@@ -64,6 +69,7 @@ public final class MetalcoreItems {
     public static final DeferredItem<PickaxeItem> STEEL_PICKAXE = ITEMS.register("steel_pickaxe", () -> new PickaxeItem(MetalcoreTiers.STEEL, new Item.Properties().attributes(PickaxeItem.createAttributes(MetalcoreTiers.STEEL, 1.0F, -2.8F))));
     public static final DeferredItem<ShovelItem> STEEL_SHOVEL = ITEMS.register("steel_shovel", () -> new ShovelItem(MetalcoreTiers.STEEL, new Item.Properties().attributes(ShovelItem.createAttributes(MetalcoreTiers.STEEL, 1.5F, -3.0F))));
     public static final DeferredItem<SwordItem> STEEL_SWORD = ITEMS.register("steel_sword", () -> new SwordItem(MetalcoreTiers.STEEL, new Item.Properties().attributes(SwordItem.createAttributes(MetalcoreTiers.STEEL, 3, -2.4F))));
+    public static final DeferredItem<WeatheringCopperShieldItem> COPPER_SHIELD = ITEMS.register("copper_shield", () -> new WeatheringCopperShieldItem(new Item.Properties().durability(384)));
 
     public static final DeferredItem<ArmorItem> STEEL_HELMET = ITEMS.register("steel_helmet", () -> new ArmorItem(MetalcoreArmorMaterials.STEEL, ArmorItem.Type.HELMET, new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(23))));
     public static final DeferredItem<ArmorItem> STEEL_CHESTPLATE = ITEMS.register("steel_chestplate", () -> new ArmorItem(MetalcoreArmorMaterials.STEEL, ArmorItem.Type.CHESTPLATE, new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(23))));

@@ -1,0 +1,9 @@
+{
+  "sources": [
+    {
+      "type": "directory",
+      "source": "entity/copper_shield",
+      "prefix": "entity/copper_shield/"
+    }
+  ]
+}

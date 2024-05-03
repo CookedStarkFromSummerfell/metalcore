@@ -1,4 +1,4 @@
-package io.kalishak.metalcore.world.item;
+package io.kalishak.metalcore.api.item;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;

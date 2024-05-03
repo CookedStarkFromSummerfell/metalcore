@@ -207,6 +207,9 @@ public class MetalItemTagsProvider extends ItemTagsProvider {
         tag(MetalItemTags.ALLOY_STEEL)
                 .add(MetalcoreItems.STEEL_INGOT.get())
                 .add(MetalcoreItems.STEEL_DUST.get());
+
+        tag(MetalItemTags.COPPER_SHIELD)
+                .add(MetalcoreItems.COPPER_SHIELD.get());
     }
 
     private void addVanillaTags() {
@@ -303,5 +306,8 @@ public class MetalItemTagsProvider extends ItemTagsProvider {
                 .addTag(MetalItemTags.DUSTS_SILVER)
                 .addTag(MetalItemTags.DUSTS_STEEL)
                 .addTag(MetalItemTags.DUSTS_TIN);
+
+        tag(Tags.Items.TOOLS_SHIELDS)
+                .addTag(MetalItemTags.COPPER_SHIELD);
     }
 }

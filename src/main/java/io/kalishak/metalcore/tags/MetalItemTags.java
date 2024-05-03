@@ -70,6 +70,9 @@ public class MetalItemTags {
     public static final TagKey<Item> ALLOY_BRONZE = modTag("alloys/bronze");
     public static final TagKey<Item> ALLOY_STEEL = modTag("alloys/steel");
 
+    public static final TagKey<Item> WEATHERING_ITEM = modTag("weathering_item");
+    public static final TagKey<Item> COPPER_SHIELD = modTag("tools/shields/copper_shield");
+
     private static TagKey<Item> commonTag(String tagName) {
         return ItemTags.create(new ResourceLocation("c", tagName));
     }

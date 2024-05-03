@@ -1,5 +1,6 @@
 package io.kalishak.metalcore;
 
+import io.kalishak.metalcore.component.MetalcoreComponents;
 import io.kalishak.metalcore.config.MetalcoreConfig;
 import io.kalishak.metalcore.data.MetalcoreDataGenerators;
 import io.kalishak.metalcore.data.MetalcoreDatapackRegistries;
@@ -8,6 +9,7 @@ import io.kalishak.metalcore.world.item.MetalcoreCreativeModeTabs;
 import io.kalishak.metalcore.world.item.MetalcoreItems;
 import io.kalishak.metalcore.world.item.MetalcoreTiers;
 import io.kalishak.metalcore.world.level.block.MetalcoreBlocks;
+import io.kalishak.metalcore.world.level.block.entity.MetalcoreBlockEntityType;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModLoadingContext;
 import net.neoforged.fml.common.Mod;
@@ -25,7 +27,9 @@ public class Metalcore {
     public Metalcore(IEventBus eventBus) {
         MetalcoreArmorMaterials.init(eventBus);
         MetalcoreBlocks.init(eventBus);
+        MetalcoreBlockEntityType.init(eventBus);
         MetalcoreCreativeModeTabs.init(eventBus);
+        MetalcoreComponents.init(eventBus);
         MetalcoreTiers.init(eventBus);
         MetalcoreItems.init(eventBus);
 

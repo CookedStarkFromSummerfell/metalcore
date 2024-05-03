@@ -1,4 +1,4 @@
-package io.kalishak.metalcore.world.item;
+package io.kalishak.metalcore.api.item;
 
 import com.mojang.datafixers.util.Pair;
 import io.kalishak.metalcore.api.tier.TierMaterial;

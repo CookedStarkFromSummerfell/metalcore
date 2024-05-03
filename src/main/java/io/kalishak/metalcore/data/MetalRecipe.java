@@ -6,10 +6,14 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
+import net.neoforged.neoforge.common.Tags;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -94,6 +98,24 @@ public class MetalRecipe extends RecipeProvider {
                 MetalItemTags.STORAGE_BLOCKS_RAW_TIN,
                 MetalcoreItems.RAW_TIN_BLOCK
         );
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, MetalcoreItems.COPPER_PIPE)
+                .define('C', Tags.Items.INGOTS_COPPER)
+                .pattern("CCC")
+                .pattern("   ")
+                .pattern("CCC")
+                .unlockedBy(getHasName(Items.COPPER_INGOT), has(Tags.Items.INGOTS_COPPER))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, MetalcoreItems.COPPER_BELL)
+                .define('C', Tags.Items.INGOTS_COPPER)
+                .define('S', Items.STICK)
+                .define('P', ItemTags.PLANKS)
+                .pattern("PSP")
+                .pattern("PCP")
+                .pattern("PCP")
+                .unlockedBy(getHasName(Items.COPPER_INGOT), has(Tags.Items.INGOTS_COPPER))
+                .save(recipeOutput);
     }
 
     private void smeltingRecipes(RecipeOutput recipeOutput) {

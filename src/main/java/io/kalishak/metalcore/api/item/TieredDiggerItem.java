@@ -1,4 +1,4 @@
-package io.kalishak.metalcore.world.item;
+package io.kalishak.metalcore.api.item;
 
 import io.kalishak.metalcore.api.tier.TierMaterial;
 import net.minecraft.core.Holder;

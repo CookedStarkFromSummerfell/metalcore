@@ -37,6 +37,14 @@ public class MetalcoreBlockLoot extends BlockLootSubProvider {
         dropSelf(MetalcoreBlocks.SILVER_BLOCK.get());
         dropSelf(MetalcoreBlocks.RAW_TIN_BLOCK.get());
         dropSelf(MetalcoreBlocks.TIN_BLOCK.get());
+        dropSelf(MetalcoreBlocks.COPPER_PIPE.get());
+        dropSelf(MetalcoreBlocks.EXPOSED_COPPER_PIPE.get());
+        dropSelf(MetalcoreBlocks.WEATHERED_COPPER_PIPE.get());
+        dropSelf(MetalcoreBlocks.OXIDIZED_COPPER_PIPE.get());
+        dropSelf(MetalcoreBlocks.COPPER_BELL.get());
+        dropSelf(MetalcoreBlocks.EXPOSED_COPPER_BELL.get());
+        dropSelf(MetalcoreBlocks.WEATHERED_COPPER_BELL.get());
+        dropSelf(MetalcoreBlocks.OXIDIZED_COPPER_BELL.get());
     }
 
     @Override
