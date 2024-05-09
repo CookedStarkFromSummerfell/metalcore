@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "parts=1": {
+      "model": "metalcore:block/oxidized_copper_spikes_parts_1"
+    },
+    "parts=2": {
+      "model": "metalcore:block/oxidized_copper_spikes_parts_2"
+    },
+    "parts=3": {
+      "model": "metalcore:block/oxidized_copper_spikes_parts_3"
+    },
+    "parts=4": {
+      "model": "metalcore:block/oxidized_copper_spikes_parts_4"
+    }
+  }
+}

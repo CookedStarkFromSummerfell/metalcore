@@ -41,10 +41,34 @@ public class MetalcoreBlockLoot extends BlockLootSubProvider {
         dropSelf(MetalcoreBlocks.EXPOSED_COPPER_PIPE.get());
         dropSelf(MetalcoreBlocks.WEATHERED_COPPER_PIPE.get());
         dropSelf(MetalcoreBlocks.OXIDIZED_COPPER_PIPE.get());
+        dropSelf(MetalcoreBlocks.WAXED_COPPER_PIPE.get());
+        dropSelf(MetalcoreBlocks.WAXED_EXPOSED_COPPER_PIPE.get());
+        dropSelf(MetalcoreBlocks.WAXED_WEATHERED_COPPER_PIPE.get());
+        dropSelf(MetalcoreBlocks.WAXED_OXIDIZED_COPPER_PIPE.get());
         dropSelf(MetalcoreBlocks.COPPER_BELL.get());
         dropSelf(MetalcoreBlocks.EXPOSED_COPPER_BELL.get());
         dropSelf(MetalcoreBlocks.WEATHERED_COPPER_BELL.get());
         dropSelf(MetalcoreBlocks.OXIDIZED_COPPER_BELL.get());
+        dropSelf(MetalcoreBlocks.WAXED_COPPER_BELL.get());
+        dropSelf(MetalcoreBlocks.WAXED_EXPOSED_COPPER_BELL.get());
+        dropSelf(MetalcoreBlocks.WAXED_WEATHERED_COPPER_BELL.get());
+        dropSelf(MetalcoreBlocks.WAXED_OXIDIZED_COPPER_BELL.get());
+        dropSelf(MetalcoreBlocks.COPPER_SPIKES.get());
+        dropSelf(MetalcoreBlocks.EXPOSED_COPPER_SPIKES.get());
+        dropSelf(MetalcoreBlocks.WEATHERED_COPPER_SPIKES.get());
+        dropSelf(MetalcoreBlocks.OXIDIZED_COPPER_SPIKES.get());
+        dropSelf(MetalcoreBlocks.WAXED_COPPER_SPIKES.get());
+        dropSelf(MetalcoreBlocks.WAXED_EXPOSED_COPPER_SPIKES.get());
+        dropSelf(MetalcoreBlocks.WAXED_WEATHERED_COPPER_SPIKES.get());
+        dropSelf(MetalcoreBlocks.WAXED_OXIDIZED_COPPER_SPIKES.get());
+        dropSelf(MetalcoreBlocks.COPPER_FAN.get());
+        dropSelf(MetalcoreBlocks.EXPOSED_COPPER_FAN.get());
+        dropSelf(MetalcoreBlocks.WEATHERED_COPPER_FAN.get());
+        dropSelf(MetalcoreBlocks.OXIDIZED_COPPER_FAN.get());
+        dropSelf(MetalcoreBlocks.WAXED_COPPER_FAN.get());
+        dropSelf(MetalcoreBlocks.WAXED_EXPOSED_COPPER_FAN.get());
+        dropSelf(MetalcoreBlocks.WAXED_WEATHERED_COPPER_FAN.get());
+        dropSelf(MetalcoreBlocks.WAXED_OXIDIZED_COPPER_FAN.get());
     }
 
     @Override

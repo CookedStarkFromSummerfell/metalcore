@@ -36,10 +36,37 @@ public final class MetalcoreItems {
     public static final DeferredItem<BlockItem> RAW_TIN_BLOCK = ITEMS.registerSimpleBlockItem(MetalcoreBlocks.RAW_TIN_BLOCK);
     public static final DeferredItem<BlockItem> TIN_BLOCK = ITEMS.registerSimpleBlockItem(MetalcoreBlocks.TIN_BLOCK);
     public static final DeferredItem<WeatheringCopperPipeBlockItem> COPPER_PIPE = ITEMS.register("copper_pipe", () -> new WeatheringCopperPipeBlockItem(MetalcoreBlocks.COPPER_PIPE, new Item.Properties()));
+    public static final DeferredItem<WeatheringCopperPipeBlockItem> EXPOSED_COPPER_PIPE = ITEMS.register("exposed_copper_pipe", () -> new WeatheringCopperPipeBlockItem(MetalcoreBlocks.EXPOSED_COPPER_PIPE, new Item.Properties()));
+    public static final DeferredItem<WeatheringCopperPipeBlockItem> WEATHERED_COPPER_PIPE = ITEMS.register("weathered_copper_pipe", () -> new WeatheringCopperPipeBlockItem(MetalcoreBlocks.WEATHERED_COPPER_PIPE, new Item.Properties()));
+    public static final DeferredItem<WeatheringCopperPipeBlockItem> OXIDIZED_COPPER_PIPE = ITEMS.register("oxidized_copper_pipe", () -> new WeatheringCopperPipeBlockItem(MetalcoreBlocks.OXIDIZED_COPPER_PIPE, new Item.Properties()));
+    public static final DeferredItem<WeatheringCopperPipeBlockItem> WAXED_COPPER_PIPE = ITEMS.register("waxed_copper_pipe", () -> new WeatheringCopperPipeBlockItem(MetalcoreBlocks.WAXED_COPPER_PIPE, new Item.Properties()));
+    public static final DeferredItem<WeatheringCopperPipeBlockItem> WAXED_EXPOSED_COPPER_PIPE = ITEMS.register("waxed_exposed_copper_pipe", () -> new WeatheringCopperPipeBlockItem(MetalcoreBlocks.WAXED_EXPOSED_COPPER_PIPE, new Item.Properties()));
+    public static final DeferredItem<WeatheringCopperPipeBlockItem> WAXED_WEATHERED_COPPER_PIPE = ITEMS.register("waxed_weathered_copper_pipe", () -> new WeatheringCopperPipeBlockItem(MetalcoreBlocks.WAXED_WEATHERED_COPPER_PIPE, new Item.Properties()));
+    public static final DeferredItem<WeatheringCopperPipeBlockItem> WAXED_OXIDIZED_COPPER_PIPE = ITEMS.register("waxed_oxidized_copper_pipe", () -> new WeatheringCopperPipeBlockItem(MetalcoreBlocks.WAXED_OXIDIZED_COPPER_PIPE, new Item.Properties()));
     public static final DeferredItem<BlockItem> COPPER_BELL = ITEMS.registerSimpleBlockItem(MetalcoreBlocks.COPPER_BELL);
     public static final DeferredItem<BlockItem> EXPOSED_COPPER_BELL = ITEMS.registerSimpleBlockItem(MetalcoreBlocks.EXPOSED_COPPER_BELL);
     public static final DeferredItem<BlockItem> WEATHERED_COPPER_BELL = ITEMS.registerSimpleBlockItem(MetalcoreBlocks.WEATHERED_COPPER_BELL);
     public static final DeferredItem<BlockItem> OXIDIZED_COPPER_BELL = ITEMS.registerSimpleBlockItem(MetalcoreBlocks.OXIDIZED_COPPER_BELL);
+    public static final DeferredItem<BlockItem> WAXED_COPPER_BELL = ITEMS.registerSimpleBlockItem(MetalcoreBlocks.WAXED_COPPER_BELL);
+    public static final DeferredItem<BlockItem> WAXED_EXPOSED_COPPER_BELL = ITEMS.registerSimpleBlockItem(MetalcoreBlocks.WAXED_EXPOSED_COPPER_BELL);
+    public static final DeferredItem<BlockItem> WAXED_WEATHERED_COPPER_BELL = ITEMS.registerSimpleBlockItem(MetalcoreBlocks.WAXED_WEATHERED_COPPER_BELL);
+    public static final DeferredItem<BlockItem> WAXED_OXIDIZED_COPPER_BELL = ITEMS.registerSimpleBlockItem(MetalcoreBlocks.WAXED_OXIDIZED_COPPER_BELL);
+    public static final DeferredItem<BlockItem> COPPER_SPIKES = ITEMS.registerSimpleBlockItem(MetalcoreBlocks.COPPER_SPIKES);
+    public static final DeferredItem<BlockItem> EXPOSED_COPPER_SPIKES = ITEMS.registerSimpleBlockItem(MetalcoreBlocks.EXPOSED_COPPER_SPIKES);
+    public static final DeferredItem<BlockItem> WEATHERED_COPPER_SPIKES = ITEMS.registerSimpleBlockItem(MetalcoreBlocks.WEATHERED_COPPER_SPIKES);
+    public static final DeferredItem<BlockItem> OXIDIZED_COPPER_SPIKES = ITEMS.registerSimpleBlockItem(MetalcoreBlocks.OXIDIZED_COPPER_SPIKES);
+    public static final DeferredItem<BlockItem> WAXED_COPPER_SPIKES = ITEMS.registerSimpleBlockItem(MetalcoreBlocks.WAXED_COPPER_SPIKES);
+    public static final DeferredItem<BlockItem> WAXED_EXPOSED_COPPER_SPIKES = ITEMS.registerSimpleBlockItem(MetalcoreBlocks.WAXED_EXPOSED_COPPER_SPIKES);
+    public static final DeferredItem<BlockItem> WAXED_WEATHERED_COPPER_SPIKES = ITEMS.registerSimpleBlockItem(MetalcoreBlocks.WAXED_WEATHERED_COPPER_SPIKES);
+    public static final DeferredItem<BlockItem> WAXED_OXIDIZED_COPPER_SPIKES = ITEMS.registerSimpleBlockItem(MetalcoreBlocks.WAXED_OXIDIZED_COPPER_SPIKES);
+    public static final DeferredItem<BlockItem> COPPER_FAN = ITEMS.registerSimpleBlockItem(MetalcoreBlocks.COPPER_FAN);
+    public static final DeferredItem<BlockItem> EXPOSED_COPPER_FAN = ITEMS.registerSimpleBlockItem(MetalcoreBlocks.EXPOSED_COPPER_FAN);
+    public static final DeferredItem<BlockItem> WEATHERED_COPPER_FAN = ITEMS.registerSimpleBlockItem(MetalcoreBlocks.WEATHERED_COPPER_FAN);
+    public static final DeferredItem<BlockItem> OXIDIZED_COPPER_FAN = ITEMS.registerSimpleBlockItem(MetalcoreBlocks.OXIDIZED_COPPER_FAN);
+    public static final DeferredItem<BlockItem> WAXED_COPPER_FAN = ITEMS.registerSimpleBlockItem(MetalcoreBlocks.WAXED_COPPER_FAN);
+    public static final DeferredItem<BlockItem> WAXED_EXPOSED_COPPER_FAN = ITEMS.registerSimpleBlockItem(MetalcoreBlocks.WAXED_EXPOSED_COPPER_FAN);
+    public static final DeferredItem<BlockItem> WAXED_WEATHERED_COPPER_FAN = ITEMS.registerSimpleBlockItem(MetalcoreBlocks.WAXED_WEATHERED_COPPER_FAN);
+    public static final DeferredItem<BlockItem> WAXED_OXIDIZED_COPPER_FAN = ITEMS.registerSimpleBlockItem(MetalcoreBlocks.WAXED_OXIDIZED_COPPER_FAN);
 
     public static final DeferredItem<Item> RAW_ALUMINUM = ITEMS.registerSimpleItem("raw_aluminum");
     public static final DeferredItem<Item> ALUMINUM_INGOT = ITEMS.registerSimpleItem("aluminum_ingot");
@@ -64,11 +91,11 @@ public final class MetalcoreItems {
     public static final DeferredItem<Item> IRON_DUST = ITEMS.registerSimpleItem("iron_dust");
     public static final DeferredItem<Item> LAPIS_LAZULI_DUST = ITEMS.registerSimpleItem("lapis_lazuli_dust");
 
-    public static final DeferredItem<AxeItem> STEEL_AXE = ITEMS.register("steel_axe", () -> new AxeItem(MetalcoreTiers.STEEL, new Item.Properties().attributes(AxeItem.createAttributes(MetalcoreTiers.STEEL, 6.0F, -3.1F))));
-    public static final DeferredItem<HoeItem> STEEL_HOE = ITEMS.register("steel_hoe", () -> new HoeItem(MetalcoreTiers.STEEL, new Item.Properties().attributes(HoeItem.createAttributes(MetalcoreTiers.STEEL, -2.0F, -1.0F))));
-    public static final DeferredItem<PickaxeItem> STEEL_PICKAXE = ITEMS.register("steel_pickaxe", () -> new PickaxeItem(MetalcoreTiers.STEEL, new Item.Properties().attributes(PickaxeItem.createAttributes(MetalcoreTiers.STEEL, 1.0F, -2.8F))));
-    public static final DeferredItem<ShovelItem> STEEL_SHOVEL = ITEMS.register("steel_shovel", () -> new ShovelItem(MetalcoreTiers.STEEL, new Item.Properties().attributes(ShovelItem.createAttributes(MetalcoreTiers.STEEL, 1.5F, -3.0F))));
-    public static final DeferredItem<SwordItem> STEEL_SWORD = ITEMS.register("steel_sword", () -> new SwordItem(MetalcoreTiers.STEEL, new Item.Properties().attributes(SwordItem.createAttributes(MetalcoreTiers.STEEL, 3, -2.4F))));
+    public static final DeferredItem<AxeItem> STEEL_AXE = ITEMS.register("steel_axe", () -> new AxeItem(MetalcoreTiers.STEEL_VANILLA, new Item.Properties().attributes(AxeItem.createAttributes(MetalcoreTiers.STEEL_VANILLA, 6.0F, -3.1F))));
+    public static final DeferredItem<HoeItem> STEEL_HOE = ITEMS.register("steel_hoe", () -> new HoeItem(MetalcoreTiers.STEEL_VANILLA, new Item.Properties().attributes(HoeItem.createAttributes(MetalcoreTiers.STEEL_VANILLA, -2.0F, -1.0F))));
+    public static final DeferredItem<PickaxeItem> STEEL_PICKAXE = ITEMS.register("steel_pickaxe", () -> new PickaxeItem(MetalcoreTiers.STEEL_VANILLA, new Item.Properties().attributes(PickaxeItem.createAttributes(MetalcoreTiers.STEEL_VANILLA, 1.0F, -2.8F))));
+    public static final DeferredItem<ShovelItem> STEEL_SHOVEL = ITEMS.register("steel_shovel", () -> new ShovelItem(MetalcoreTiers.STEEL_VANILLA, new Item.Properties().attributes(ShovelItem.createAttributes(MetalcoreTiers.STEEL_VANILLA, 1.5F, -3.0F))));
+    public static final DeferredItem<SwordItem> STEEL_SWORD = ITEMS.register("steel_sword", () -> new SwordItem(MetalcoreTiers.STEEL_VANILLA, new Item.Properties().attributes(SwordItem.createAttributes(MetalcoreTiers.STEEL_VANILLA, 3, -2.4F))));
     public static final DeferredItem<WeatheringCopperShieldItem> COPPER_SHIELD = ITEMS.register("copper_shield", () -> new WeatheringCopperShieldItem(new Item.Properties().durability(384)));
 
     public static final DeferredItem<ArmorItem> STEEL_HELMET = ITEMS.register("steel_helmet", () -> new ArmorItem(MetalcoreArmorMaterials.STEEL, ArmorItem.Type.HELMET, new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(23))));

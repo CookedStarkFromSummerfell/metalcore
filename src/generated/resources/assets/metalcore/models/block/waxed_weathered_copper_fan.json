@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "metalcore:block/weathered_copper_fan_top",
+    "side": "metalcore:block/weathered_copper_fan_side",
+    "top": "metalcore:block/weathered_copper_fan_bottom"
+  }
+}

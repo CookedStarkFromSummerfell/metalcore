@@ -31,15 +31,6 @@ public class WeatheringCopperBellBlock extends CopperBellBlock implements Weathe
     }
 
     @Override
-    public float getChanceModifier() {
-        float modifier = WeatheringCopperHolder.super.getChanceModifier();
-
-        //if (waterlogged) { modifier *= 2.0F; }
-
-        return modifier;
-    }
-
-    @Override
     public WeatherState getAge() {
         return this.weatherState;
     }

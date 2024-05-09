@@ -1,0 +1,60 @@
+{
+  "values": {
+    "metalcore:copper_bell": {
+      "next_weathering_block": "metalcore:exposed_copper_bell"
+    },
+    "metalcore:copper_fan": {
+      "next_weathering_block": "metalcore:exposed_copper_fan"
+    },
+    "metalcore:copper_pipe": {
+      "next_weathering_block": "metalcore:exposed_copper_pipe"
+    },
+    "metalcore:copper_spikes": {
+      "next_weathering_block": "metalcore:exposed_copper_spikes"
+    },
+    "metalcore:exposed_copper_bell": {
+      "next_weathering_block": "metalcore:weathered_copper_bell",
+      "previous_weathering_block": "metalcore:copper_bell"
+    },
+    "metalcore:exposed_copper_fan": {
+      "next_weathering_block": "metalcore:weathered_copper_fan",
+      "previous_weathering_block": "metalcore:copper_fan"
+    },
+    "metalcore:exposed_copper_pipe": {
+      "next_weathering_block": "metalcore:weathered_coppper_pipe",
+      "previous_weathering_block": "metalcore:copper_pipe"
+    },
+    "metalcore:exposed_copper_spikes": {
+      "next_weathering_block": "metalcore:weathered_copper_spikes",
+      "previous_weathering_block": "metalcore:copper_spikes"
+    },
+    "metalcore:oxidized_copper_bell": {
+      "previous_weathering_block": "metalcore:weathered_copper_bell"
+    },
+    "metalcore:oxidized_copper_fan": {
+      "previous_weathering_block": "metalcore:weathered_copper_fan"
+    },
+    "metalcore:oxidized_copper_pipe": {
+      "previous_weathering_block": "metalcore:weathered_coppper_pipe"
+    },
+    "metalcore:oxidized_copper_spikes": {
+      "previous_weathering_block": "metalcore:weathered_copper_spikes"
+    },
+    "metalcore:weathered_copper_bell": {
+      "next_weathering_block": "metalcore:oxidized_copper_bell",
+      "previous_weathering_block": "metalcore:exposed_copper_bell"
+    },
+    "metalcore:weathered_copper_fan": {
+      "next_weathering_block": "metalcore:oxidized_copper_fan",
+      "previous_weathering_block": "metalcore:exposed_copper_fan"
+    },
+    "metalcore:weathered_copper_spikes": {
+      "next_weathering_block": "metalcore:oxidized_copper_spikes",
+      "previous_weathering_block": "metalcore:exposed_copper_spikes"
+    },
+    "metalcore:weathered_coppper_pipe": {
+      "next_weathering_block": "metalcore:oxidized_copper_pipe",
+      "previous_weathering_block": "metalcore:exposed_copper_pipe"
+    }
+  }
+}

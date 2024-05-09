@@ -99,7 +99,7 @@ public class MetalRecipe extends RecipeProvider {
                 MetalcoreItems.RAW_TIN_BLOCK
         );
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, MetalcoreItems.COPPER_PIPE)
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, MetalcoreItems.COPPER_PIPE, 6)
                 .define('C', Tags.Items.INGOTS_COPPER)
                 .pattern("CCC")
                 .pattern("   ")
@@ -114,6 +114,14 @@ public class MetalRecipe extends RecipeProvider {
                 .pattern("PSP")
                 .pattern("PCP")
                 .pattern("PCP")
+                .unlockedBy(getHasName(Items.COPPER_INGOT), has(Tags.Items.INGOTS_COPPER))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, MetalcoreItems.COPPER_SPIKES, 9)
+                .define('C', Tags.Items.INGOTS_COPPER)
+                .define('S', Tags.Items.STORAGE_BLOCKS_COPPER)
+                .pattern(" C ")
+                .pattern("CSC")
                 .unlockedBy(getHasName(Items.COPPER_INGOT), has(Tags.Items.INGOTS_COPPER))
                 .save(recipeOutput);
     }

@@ -6,7 +6,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.WeatheringCopper;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class WeatheringCopperBaseBlock extends Block implements WeatheringCopperHolder {
@@ -14,9 +13,10 @@ public class WeatheringCopperBaseBlock extends Block implements WeatheringCopper
             WeatherState.CODEC.fieldOf("weather_state").forGetter(WeatheringCopperBaseBlock::getAge),
             propertiesCodec()
     ).apply(instance, WeatheringCopperBaseBlock::new));
-    protected WeatheringCopper.WeatherState weatherState;
 
-    public WeatheringCopperBaseBlock(WeatheringCopper.WeatherState weatherState, Properties properties) {
+    protected WeatherState weatherState;
+
+    public WeatheringCopperBaseBlock(WeatherState weatherState, Properties properties) {
         super(properties);
         this.weatherState = weatherState;
     }
@@ -32,7 +32,12 @@ public class WeatheringCopperBaseBlock extends Block implements WeatheringCopper
     }
 
     @Override
-    protected void randomTick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRandom) {
-        changeOverTime(pState, pLevel, pPos, pRandom);
+    protected boolean isRandomlyTicking(BlockState blockState) {
+        return getAge() != WeatherState.OXIDIZED || super.isRandomlyTicking(blockState);
+    }
+
+    @Override
+    protected void randomTick(BlockState blockState, ServerLevel level, BlockPos blockPos, RandomSource randomSource) {
+        changeOverTime(blockState, level, blockPos, randomSource);
     }
 }

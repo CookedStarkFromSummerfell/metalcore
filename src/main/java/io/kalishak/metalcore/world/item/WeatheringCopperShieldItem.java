@@ -1,10 +1,15 @@
 package io.kalishak.metalcore.world.item;
 
+import io.kalishak.metalcore.api.item.SimpleWeatheringItem;
 import io.kalishak.metalcore.api.item.WeatheredComponent;
 import io.kalishak.metalcore.api.item.WeatheringCopperItem;
+import io.kalishak.metalcore.client.MetalcoreClient;
 import io.kalishak.metalcore.client.renderer.MetalcoreBEWLR;
 import io.kalishak.metalcore.component.MetalcoreComponents;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
+import net.minecraft.core.Holder;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.Entity;
@@ -21,12 +26,12 @@ import net.neoforged.neoforge.common.ToolActions;
 
 import java.util.function.Consumer;
 
-public class WeatheringCopperShieldItem extends Item implements WeatheringCopperItem, Equipable {
+public class WeatheringCopperShieldItem extends SimpleWeatheringItem implements Equipable {
     public static final int EFFECTIVE_BLOCK_DELAY = 5;
     public static final float MINIMUM_DURABILITY_DAMAGE = 3.0F;
 
     public WeatheringCopperShieldItem(Properties pProperties) {
-        super(pProperties.component(MetalcoreComponents.WEATHERED_ITEM, new WeatheredComponent(WeatheringCopper.WeatherState.UNAFFECTED, false)));
+        super(1.0F, pProperties);
         DispenserBlock.registerBehavior(this, ArmorItem.DISPENSE_ITEM_BEHAVIOR);
     }
 
@@ -45,19 +50,6 @@ public class WeatheringCopperShieldItem extends Item implements WeatheringCopper
         ItemStack stack = pPlayer.getItemInHand(pUsedHand);
         pPlayer.startUsingItem(pUsedHand);
         return InteractionResultHolder.consume(stack);
-    }
-
-    @Override
-    public void inventoryTick(ItemStack pStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected) {
-        super.inventoryTick(pStack, pLevel, pEntity, pSlotId, pIsSelected);
-
-        WeatheredComponent weatheredComponent = pStack.get(MetalcoreComponents.WEATHERED_ITEM);
-        if (weatheredComponent != null) {
-            if (getChance(pStack) < pLevel.random.nextFloat()) {
-                weatheredComponent = new WeatheredComponent(nextState(pStack), true);
-                pStack.set(MetalcoreComponents.WEATHERED_ITEM, weatheredComponent);
-            }
-        }
     }
 
     @Override
@@ -80,13 +72,8 @@ public class WeatheringCopperShieldItem extends Item implements WeatheringCopper
         consumer.accept(new IClientItemExtensions() {
             @Override
             public BlockEntityWithoutLevelRenderer getCustomRenderer() {
-                return MetalcoreBEWLR.getInstance();
+                return MetalcoreBEWLR.INSTANCE;
             }
         });
-    }
-
-    @Override
-    public float getChance(ItemStack stack) {
-        return 0.005F;
     }
 }

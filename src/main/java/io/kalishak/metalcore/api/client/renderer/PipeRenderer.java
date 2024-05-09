@@ -5,7 +5,9 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import io.kalishak.metalcore.api.block.Pipe;
 import io.kalishak.metalcore.api.block.PipeBlockEntity;
 import io.kalishak.metalcore.api.block.SixwayStorageBlock;
-import io.kalishak.metalcore.api.client.MetalcoreModelLayers;
+import io.kalishak.metalcore.api.block.WeatheringCopperHolder;
+import io.kalishak.metalcore.client.MetalcoreModelLayers;
+import io.kalishak.metalcore.client.renderer.MetalcoreSheets;
 import io.kalishak.metalcore.world.level.block.MetalcoreBlocks;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
@@ -20,7 +22,6 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.client.resources.model.Material;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.WeatheringCopper;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
@@ -34,7 +35,7 @@ public class PipeRenderer<E extends PipeBlockEntity> implements BlockEntityRende
     private final ModelPart pipeExtract;
 
     private Pipe.Type type;
-    private @Nullable WeatheringCopper.WeatherState weatherState;
+    private @Nullable WeatheringCopperHolder.WeatherState weatherState;
 
     public PipeRenderer(BlockEntityRendererProvider.Context cxt) {
         ModelPart root = cxt.bakeLayer(MetalcoreModelLayers.PIPE);
@@ -76,9 +77,9 @@ public class PipeRenderer<E extends PipeBlockEntity> implements BlockEntityRende
         }
     }
 
-    private void preRender(SixwayStorageBlock block) {
+    private void preRender(SixwayStorageBlock<?> block) {
         this.type = block.getType();
-        this.weatherState = block instanceof WeatheringCopper weatheringCopper ? weatheringCopper.getAge() : null;
+        this.weatherState = block instanceof WeatheringCopperHolder weatheringCopper ? weatheringCopper.getAge() : null;
     }
 
     private void render(PoseStack poseStack, VertexConsumer vertexConsumer, int light, int overlay) {

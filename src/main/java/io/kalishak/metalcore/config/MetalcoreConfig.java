@@ -7,6 +7,8 @@ import net.neoforged.neoforge.common.ModConfigSpec;
 public class MetalcoreConfig {
     public static final ModConfigSpec SERVER_SPEC;
     public static final Server SERVER;
+    public static final ModConfigSpec CLIENT_SPEC;
+    public static final Client CLIENT;
 
     public static class Server {
         public final SpawnWeight aluminumSpawnWeight;
@@ -14,6 +16,8 @@ public class MetalcoreConfig {
         public final SpawnWeight siliconSpawnWeight;
         public final SpawnWeight silverSpawnWeight;
         public final SpawnWeight tinSpawnWeight;
+        public final ModConfigSpec.BooleanValue useDurabilityNotRandom;
+        public final ModConfigSpec.IntValue ticksPerOxidation;
 
         public Server(ModConfigSpec.Builder builder) {
             builder.push("World Generation");
@@ -48,21 +52,49 @@ public class MetalcoreConfig {
                     bld -> bld.define("Tin Ore spawn to y", 80)
             );
             builder.pop();
-        }
 
-        @SubscribeEvent
-        public void onConfigLoad(ModConfigEvent.Loading event) {
-            this.aluminumSpawnWeight.configEventLoaded();
-            this.leadSpawnWeight.configEventLoaded();
-            this.siliconSpawnWeight.configEventLoaded();
-            this.silverSpawnWeight.configEventLoaded();
-            this.tinSpawnWeight.configEventLoaded();
+            builder.push("Gameplay");
+            this.useDurabilityNotRandom = builder
+                    .comment("Weathering Items will be changing their texture based on durability not armor ticking")
+                    .translation("config.metalcore.server.use_durability_not_random")
+                    .define("Weathering Items texture change from durability", false);
+            this.ticksPerOxidation = builder
+                    .comment("Ticks per Weathering Items can oxidize [Works only if higher config entry is set to false]")
+                    .translation("config.metalcore.server.ticks_per_oxidation")
+                    .defineInRange("Ticks per Weathering Items have a chance to oxidize", 200, 1, Integer.MAX_VALUE);
+            builder.pop();
         }
+    }
+
+    public static class Client {
+        public final ModConfigSpec.BooleanValue glassPipesShowFluid;
+
+        public Client(ModConfigSpec.Builder builder) {
+            builder.push("Blocks");
+            this.glassPipesShowFluid = builder
+                    .comment("Whether fluid should be visible in glass pipes")
+                    .translation("config.metalcore.client.glass_pipes_show_fluid")
+                    .define("Show fluid in glass pipes", true);
+            builder.pop();
+        }
+    }
+
+    @SubscribeEvent
+    public static void onConfigLoad(ModConfigEvent.Loading event) {
+        SERVER.aluminumSpawnWeight.configEventLoaded();
+        SERVER.leadSpawnWeight.configEventLoaded();
+        SERVER.siliconSpawnWeight.configEventLoaded();
+        SERVER.silverSpawnWeight.configEventLoaded();
+        SERVER.tinSpawnWeight.configEventLoaded();
     }
 
     static {
         var pair = new ModConfigSpec.Builder().configure(Server::new);
         SERVER_SPEC = pair.getRight();
         SERVER = pair.getLeft();
+
+        var clientPair = new ModConfigSpec.Builder().configure(Client::new);
+        CLIENT_SPEC = clientPair.getRight();
+        CLIENT = clientPair.getLeft();
     }
 }

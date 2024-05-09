@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/bell_ceiling",
+  "textures": {
+    "particle": "metalcore:block/oxidized_copper_bell_bottom"
+  }
+}

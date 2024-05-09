@@ -10,7 +10,6 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.LootTableProvider;
-import net.minecraft.world.level.storage.loot.BuiltInLootTables;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -29,6 +28,7 @@ public class MetalcoreDataGenerators {
         ExistingFileHelper fileHelper = event.getExistingFileHelper();
 
         dataGenerator.addProvider(event.includeServer(), new MetalcoreDataPack(packOutput, registries, Metalcore.MODID));
+        dataGenerator.addProvider(event.includeServer(), new MetalcoreDataMapProvider(packOutput, registries));
         dataGenerator.addProvider(event.includeServer(), new LootTableProvider(packOutput, Collections.emptySet(), List.of(new LootTableProvider.SubProviderEntry(MetalcoreBlockLoot::new, LootContextParamSets.BLOCK)), registries));
         dataGenerator.addProvider(event.includeServer(), new MetalRecipe(packOutput, registries));
         MetalTagsProvider.init(event, Metalcore.MODID, dataGenerator::addProvider);

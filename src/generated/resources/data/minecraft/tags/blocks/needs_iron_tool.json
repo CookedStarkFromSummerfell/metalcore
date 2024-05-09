@@ -11,6 +11,14 @@
     "metalcore:aluminum_block",
     "metalcore:raw_silicon_block",
     "metalcore:raw_silver_block",
-    "metalcore:silver_block"
+    "metalcore:silver_block",
+    "metalcore:copper_pipe",
+    "metalcore:exposed_copper_pipe",
+    "metalcore:weathered_coppper_pipe",
+    "metalcore:oxidized_copper_pipe",
+    "metalcore:copper_bell",
+    "metalcore:exposed_copper_bell",
+    "metalcore:weathered_copper_bell",
+    "metalcore:oxidized_copper_bell"
   ]
 }

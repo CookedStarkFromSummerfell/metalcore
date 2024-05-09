@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/orientable_vertical",
+  "textures": {
+    "front": "metalcore:block/copper_fan_top",
+    "side": "metalcore:block/copper_fan_side"
+  }
+}

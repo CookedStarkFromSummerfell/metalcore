@@ -1,6 +1,7 @@
 package io.kalishak.metalcore.world.level.block;
 
 import io.kalishak.metalcore.Metalcore;
+import io.kalishak.metalcore.api.block.WeatheringCopperHolder;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -102,19 +103,19 @@ public final class MetalcoreBlocks {
     );
 
     public static final DeferredBlock<WeatheringCopperPipeBlock> COPPER_PIPE = BLOCKS.register("copper_pipe", () -> new WeatheringCopperPipeBlock(
-            WeatheringCopper.WeatherState.UNAFFECTED,
+            WeatheringCopperHolder.WeatherState.UNAFFECTED,
             BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_ORANGE).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.COPPER))
     );
     public static final DeferredBlock<WeatheringCopperPipeBlock> EXPOSED_COPPER_PIPE = BLOCKS.register("exposed_copper_pipe", () -> new WeatheringCopperPipeBlock(
-            WeatheringCopper.WeatherState.EXPOSED,
+            WeatheringCopperHolder.WeatherState.EXPOSED,
             BlockBehaviour.Properties.ofFullCopy(COPPER_PIPE.get()).mapColor(MapColor.TERRACOTTA_LIGHT_GRAY))
     );
     public static final DeferredBlock<WeatheringCopperPipeBlock> WEATHERED_COPPER_PIPE = BLOCKS.register("weathered_coppper_pipe", () -> new WeatheringCopperPipeBlock(
-            WeatheringCopper.WeatherState.WEATHERED,
+            WeatheringCopperHolder.WeatherState.WEATHERED,
             BlockBehaviour.Properties.ofFullCopy(COPPER_PIPE.get()).mapColor(MapColor.WARPED_STEM))
     );
     public static final DeferredBlock<WeatheringCopperPipeBlock> OXIDIZED_COPPER_PIPE = BLOCKS.register("oxidized_copper_pipe", () -> new WeatheringCopperPipeBlock(
-            WeatheringCopper.WeatherState.OXIDIZED,
+            WeatheringCopperHolder.WeatherState.OXIDIZED,
             BlockBehaviour.Properties.ofFullCopy(COPPER_PIPE.get()).mapColor(MapColor.WARPED_NYLIUM))
     );
     public static final DeferredBlock<Block> WAXED_COPPER_PIPE = BLOCKS.register("waxed_copper_pipe", () -> new Block(
@@ -131,19 +132,19 @@ public final class MetalcoreBlocks {
     );
 
     public static final DeferredBlock<WeatheringCopperBellBlock> COPPER_BELL = BLOCKS.register("copper_bell", () -> new WeatheringCopperBellBlock(
-            WeatheringCopper.WeatherState.UNAFFECTED,
+            WeatheringCopperHolder.WeatherState.UNAFFECTED,
             BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_ORANGE).forceSolidOn().requiresCorrectToolForDrops().strength(5.0F).sound(SoundType.ANVIL).pushReaction(PushReaction.DESTROY))
     );
     public static final DeferredBlock<WeatheringCopperBellBlock> EXPOSED_COPPER_BELL = BLOCKS.register("exposed_copper_bell", () -> new WeatheringCopperBellBlock(
-            WeatheringCopper.WeatherState.EXPOSED,
+            WeatheringCopperHolder.WeatherState.EXPOSED,
             BlockBehaviour.Properties.ofFullCopy(COPPER_BELL.get()).mapColor(MapColor.TERRACOTTA_LIGHT_GRAY))
     );
-    public static final DeferredBlock<WeatheringCopperBellBlock> WEATHERED_COPPER_BELL = BLOCKS.register("exposed_copper_bell", () -> new WeatheringCopperBellBlock(
-            WeatheringCopper.WeatherState.WEATHERED,
+    public static final DeferredBlock<WeatheringCopperBellBlock> WEATHERED_COPPER_BELL = BLOCKS.register("weathered_copper_bell", () -> new WeatheringCopperBellBlock(
+            WeatheringCopperHolder.WeatherState.WEATHERED,
             BlockBehaviour.Properties.ofFullCopy(COPPER_BELL.get()).mapColor(MapColor.WARPED_STEM))
     );
-    public static final DeferredBlock<WeatheringCopperBellBlock> OXIDIZED_COPPER_BELL = BLOCKS.register("exposed_copper_bell", () -> new WeatheringCopperBellBlock(
-            WeatheringCopper.WeatherState.OXIDIZED,
+    public static final DeferredBlock<WeatheringCopperBellBlock> OXIDIZED_COPPER_BELL = BLOCKS.register("oxidized_copper_bell", () -> new WeatheringCopperBellBlock(
+            WeatheringCopperHolder.WeatherState.OXIDIZED,
             BlockBehaviour.Properties.ofFullCopy(COPPER_BELL.get()).mapColor(MapColor.WARPED_NYLIUM))
     );
     public static final DeferredBlock<CopperBellBlock> WAXED_COPPER_BELL = BLOCKS.register("waxed_copper_bell", () -> new CopperBellBlock(
@@ -160,35 +161,62 @@ public final class MetalcoreBlocks {
     );
 
     public static final DeferredBlock<WeatheringCopperSpikesBlock> COPPER_SPIKES = BLOCKS.register("copper_spikes", () -> new WeatheringCopperSpikesBlock(
-            WeatheringCopper.WeatherState.UNAFFECTED,
+            WeatheringCopperHolder.WeatherState.UNAFFECTED,
             BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_ORANGE).forceSolidOn().requiresCorrectToolForDrops().strength(1.5F).randomTicks().sound(SoundType.COPPER))
     );
     public static final DeferredBlock<WeatheringCopperSpikesBlock> EXPOSED_COPPER_SPIKES = BLOCKS.register("exposed_copper_spikes", () -> new WeatheringCopperSpikesBlock(
-            WeatheringCopper.WeatherState.EXPOSED,
+            WeatheringCopperHolder.WeatherState.EXPOSED,
             BlockBehaviour.Properties.ofFullCopy(COPPER_SPIKES.get()).mapColor(MapColor.TERRACOTTA_LIGHT_GRAY))
     );
     public static final DeferredBlock<WeatheringCopperSpikesBlock> WEATHERED_COPPER_SPIKES = BLOCKS.register("weathered_copper_spikes", () -> new WeatheringCopperSpikesBlock(
-            WeatheringCopper.WeatherState.WEATHERED,
+            WeatheringCopperHolder.WeatherState.WEATHERED,
             BlockBehaviour.Properties.ofFullCopy(COPPER_SPIKES.get()).mapColor(MapColor.WARPED_STEM))
     );
     public static final DeferredBlock<WeatheringCopperSpikesBlock> OXIDIZED_COPPER_SPIKES = BLOCKS.register("oxidized_copper_spikes", () -> new WeatheringCopperSpikesBlock(
-            WeatheringCopper.WeatherState.OXIDIZED,
+            WeatheringCopperHolder.WeatherState.OXIDIZED,
             BlockBehaviour.Properties.ofFullCopy(COPPER_SPIKES.get()).mapColor(MapColor.WARPED_NYLIUM))
     );
     public static final DeferredBlock<CopperSpikesBlock> WAXED_COPPER_SPIKES = BLOCKS.register("waxed_copper_spikes", () -> new CopperSpikesBlock(
-            BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_ORANGE).forceSolidOn().requiresCorrectToolForDrops().strength(1.5F).sound(SoundType.COPPER))
+            BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_ORANGE).randomTicks().forceSolidOn().requiresCorrectToolForDrops().strength(1.5F).sound(SoundType.COPPER))
     );
     public static final DeferredBlock<CopperSpikesBlock> WAXED_EXPOSED_COPPER_SPIKES = BLOCKS.register("waxed_exposed_copper_spikes", () -> new CopperSpikesBlock(
             BlockBehaviour.Properties.ofFullCopy(WAXED_COPPER_SPIKES.get()).mapColor(MapColor.TERRACOTTA_LIGHT_GRAY))
     );
     public static final DeferredBlock<CopperSpikesBlock> WAXED_WEATHERED_COPPER_SPIKES = BLOCKS.register("waxed_weathered_copper_spikes", () -> new CopperSpikesBlock(
-            BlockBehaviour.Properties.ofFullCopy(WAXED_COPPER_SPIKES.get()).mapColor(MapColor.TERRACOTTA_LIGHT_GRAY))
+            BlockBehaviour.Properties.ofFullCopy(WAXED_COPPER_SPIKES.get()).mapColor(MapColor.WARPED_STEM))
     );
     public static final DeferredBlock<CopperSpikesBlock> WAXED_OXIDIZED_COPPER_SPIKES = BLOCKS.register("waxed_oxidized_copper_spikes", () -> new CopperSpikesBlock(
-            BlockBehaviour.Properties.ofFullCopy(WAXED_COPPER_SPIKES.get()).mapColor(MapColor.TERRACOTTA_LIGHT_GRAY))
+            BlockBehaviour.Properties.ofFullCopy(WAXED_COPPER_SPIKES.get()).mapColor(MapColor.WARPED_NYLIUM))
     );
 
-    //Copper fans and copper spikes and waxed entries
+    public static final DeferredBlock<WeatheringCopperFanBlock> COPPER_FAN = BLOCKS.register("copper_fan", () -> new WeatheringCopperFanBlock(
+            WeatheringCopperHolder.WeatherState.UNAFFECTED,
+            BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_ORANGE).requiresCorrectToolForDrops().strength(4.5F).sound(SoundType.COPPER))
+    );
+    public static final DeferredBlock<WeatheringCopperFanBlock> EXPOSED_COPPER_FAN = BLOCKS.register("exposed_copper_fan", () -> new WeatheringCopperFanBlock(
+            WeatheringCopperHolder.WeatherState.EXPOSED,
+            BlockBehaviour.Properties.ofFullCopy(COPPER_FAN.get()).mapColor(MapColor.TERRACOTTA_LIGHT_GRAY))
+    );
+    public static final DeferredBlock<WeatheringCopperFanBlock> WEATHERED_COPPER_FAN = BLOCKS.register("weathered_copper_fan", () -> new WeatheringCopperFanBlock(
+            WeatheringCopperHolder.WeatherState.WEATHERED,
+            BlockBehaviour.Properties.ofFullCopy(COPPER_FAN.get()).mapColor(MapColor.WARPED_STEM))
+    );
+    public static final DeferredBlock<WeatheringCopperFanBlock> OXIDIZED_COPPER_FAN = BLOCKS.register("oxidized_copper_fan", () -> new WeatheringCopperFanBlock(
+            WeatheringCopperHolder.WeatherState.OXIDIZED,
+            BlockBehaviour.Properties.ofFullCopy(COPPER_FAN.get()).mapColor(MapColor.WARPED_NYLIUM))
+    );
+    public static final DeferredBlock<CopperFanBlock> WAXED_COPPER_FAN = BLOCKS.register("waxed_copper_fan", () -> new CopperFanBlock(
+            BlockBehaviour.Properties.ofFullCopy(COPPER_FAN.get()))
+    );
+    public static final DeferredBlock<CopperFanBlock> WAXED_EXPOSED_COPPER_FAN = BLOCKS.register("waxed_exposed_copper_fan", () -> new CopperFanBlock(
+            BlockBehaviour.Properties.ofFullCopy(EXPOSED_COPPER_FAN.get()))
+    );
+    public static final DeferredBlock<CopperFanBlock> WAXED_WEATHERED_COPPER_FAN = BLOCKS.register("waxed_weathered_copper_fan", () -> new CopperFanBlock(
+            BlockBehaviour.Properties.ofFullCopy(WEATHERED_COPPER_FAN.get()))
+    );
+    public static final DeferredBlock<CopperFanBlock> WAXED_OXIDIZED_COPPER_FAN = BLOCKS.register("waxed_oxidized_copper_fan", () -> new CopperFanBlock(
+            BlockBehaviour.Properties.ofFullCopy(OXIDIZED_COPPER_FAN.get()))
+    );
 
     public static void init(IEventBus eventBus) {
         BLOCKS.register(eventBus);

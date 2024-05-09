@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "metalcore:weathered_copper_spikes"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "metalcore:blocks/weathered_copper_spikes"
+}

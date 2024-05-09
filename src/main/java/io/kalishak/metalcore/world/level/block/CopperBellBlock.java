@@ -1,6 +1,7 @@
 package io.kalishak.metalcore.world.level.block;
 
 import com.mojang.serialization.MapCodec;
+import io.kalishak.metalcore.api.block.ToolActionStateModifable;
 import io.kalishak.metalcore.world.level.block.entity.MetalcoreBlockEntityType;
 import io.kalishak.metalcore.world.level.block.entity.CopperBellBlockEntity;
 import net.minecraft.core.BlockPos;
@@ -14,9 +15,9 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.*;
 import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.block.entity.BellBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -31,11 +32,12 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.neoforged.neoforge.common.ToolAction;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.function.BiConsumer;
 
-public class CopperBellBlock extends BaseEntityBlock implements SimpleWaterloggedBlock {
+public class CopperBellBlock extends BaseEntityBlock implements SimpleWaterloggedBlock, ToolActionStateModifable {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
     public static final EnumProperty<BellAttachType> ATTACHMENT = BlockStateProperties.BELL_ATTACHMENT;
     public static final BooleanProperty POWERED = BlockStateProperties.POWERED;
@@ -138,7 +140,7 @@ public class CopperBellBlock extends BaseEntityBlock implements SimpleWaterlogge
     public boolean attemptToRing(@Nullable Entity pEntity, Level pLevel, BlockPos pPos, @Nullable Direction pDirection) {
         BlockEntity blockEntity = pLevel.getBlockEntity(pPos);
 
-        if (!pLevel.isClientSide && blockEntity instanceof BellBlockEntity bell) {
+        if (!pLevel.isClientSide && blockEntity instanceof CopperBellBlockEntity bell) {
             if (pDirection == null) {
                 pDirection = pLevel.getBlockState(pPos).getValue(FACING);
             }
@@ -160,8 +162,12 @@ public class CopperBellBlock extends BaseEntityBlock implements SimpleWaterlogge
             return direction != Direction.NORTH && direction != Direction.SOUTH ? EAST_WEST_FLOOR_SHAPE : NORTH_SOUTH_FLOOR_SHAPE;
         } else if (bellAttachType == BellAttachType.CEILING) {
             return CEILING_SHAPE;
+        } else if (bellAttachType == BellAttachType.DOUBLE_WALL) {
+            return direction != Direction.NORTH && direction != Direction.SOUTH ? EAST_WEST_BETWEEN : NORTH_SOUTH_BETWEEN;
         } else if (direction == Direction.NORTH) {
             return TO_NORTH;
+        } else if (direction == Direction.SOUTH) {
+            return TO_SOUTH;
         } else {
             return direction == Direction.EAST ? TO_EAST : TO_WEST;
         }
@@ -209,14 +215,14 @@ public class CopperBellBlock extends BaseEntityBlock implements SimpleWaterlogge
                     .setValue(ATTACHMENT, flag ? BellAttachType.DOUBLE_WALL : BellAttachType.SINGLE_WALL)
                     .setValue(FACING, direction.getOpposite());
 
-            if (state.canSurvive(pContext.getLevel(), blockpos)) {
+            if (state.canSurvive(level, blockpos)) {
                 return state;
             }
 
             boolean flag1 = level.getBlockState(blockpos.below()).isFaceSturdy(level, blockpos.below(), Direction.UP);
             state = state.setValue(ATTACHMENT, flag1 ? BellAttachType.FLOOR : BellAttachType.CEILING);
 
-            if (state.canSurvive(pContext.getLevel(), pContext.getClickedPos())) {
+            if (state.canSurvive(level, pContext.getClickedPos())) {
                 return state;
             }
         }
@@ -235,20 +241,20 @@ public class CopperBellBlock extends BaseEntityBlock implements SimpleWaterlogge
 
     @Override
     protected BlockState updateShape(BlockState pState, Direction pFacing, BlockState pFacingState, LevelAccessor pLevel, BlockPos pCurrentPos, BlockPos pFacingPos) {
-        BellAttachType bellAttachType = pFacingState.getValue(ATTACHMENT);
+        BellAttachType bellattachtype = pState.getValue(ATTACHMENT);
         Direction direction = getConnectedDirection(pState).getOpposite();
-
-        if (direction == pFacing && !pState.canSurvive(pLevel, pCurrentPos) && bellAttachType != BellAttachType.DOUBLE_WALL) {
+        
+        if (direction == pFacing && !pState.canSurvive(pLevel, pCurrentPos) && bellattachtype != BellAttachType.DOUBLE_WALL) {
             return Blocks.AIR.defaultBlockState();
         } else {
             if (pFacing.getAxis() == pState.getValue(FACING).getAxis()) {
-                if (bellAttachType == BellAttachType.DOUBLE_WALL && !pFacingState.isFaceSturdy(pLevel, pFacingPos, pFacing)) {
+                if (bellattachtype == BellAttachType.DOUBLE_WALL && !pFacingState.isFaceSturdy(pLevel, pFacingPos, pFacing)) {
                     return pState.setValue(ATTACHMENT, BellAttachType.SINGLE_WALL).setValue(FACING, pFacing.getOpposite());
                 }
 
-                if (bellAttachType == BellAttachType.SINGLE_WALL
-                && direction.getOpposite() == pFacing
-                && pFacingState.isFaceSturdy(pLevel, pFacingPos, pState.getValue(FACING))) {
+                if (bellattachtype == BellAttachType.SINGLE_WALL
+                        && direction.getOpposite() == pFacing
+                        && pFacingState.isFaceSturdy(pLevel, pFacingPos, pState.getValue(FACING))) {
                     return pState.setValue(ATTACHMENT, BellAttachType.DOUBLE_WALL);
                 }
             }
@@ -304,5 +310,10 @@ public class CopperBellBlock extends BaseEntityBlock implements SimpleWaterlogge
     @Override
     public BlockState mirror(BlockState pState, Mirror pMirror) {
         return pState.rotate(pMirror.getRotation(pState.getValue(FACING)));
+    }
+
+    @Override
+    public @Nullable BlockState getToolModifiedState(BlockState state, UseOnContext context, ToolAction toolAction, boolean simulate) {
+        return applyToolAction(state, context, toolAction);
     }
 }

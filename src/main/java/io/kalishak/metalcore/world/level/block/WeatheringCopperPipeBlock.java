@@ -5,9 +5,6 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 import io.kalishak.metalcore.api.block.WeatheringCopperHolder;
 import io.kalishak.metalcore.world.level.block.entity.CopperPipeBlockEntity;
 import io.kalishak.metalcore.world.level.block.entity.MetalcoreBlockEntityType;
-import net.minecraft.core.BlockPos;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.WeatheringCopper;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -22,9 +19,9 @@ public class WeatheringCopperPipeBlock extends CopperPipeBlock implements Weathe
             propertiesCodec()
     ).apply(instance, WeatheringCopperPipeBlock::new));
 
-    protected final WeatheringCopper.WeatherState weatherState;
+    protected final WeatherState weatherState;
 
-    public WeatheringCopperPipeBlock(WeatheringCopper.WeatherState weatherState, Properties properties) {
+    public WeatheringCopperPipeBlock(WeatherState weatherState, Properties properties) {
         super(properties);
         this.weatherState = weatherState;
     }

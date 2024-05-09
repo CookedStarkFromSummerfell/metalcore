@@ -33,12 +33,14 @@ public class Metalcore {
         MetalcoreTiers.init(eventBus);
         MetalcoreItems.init(eventBus);
 
-        eventBus.addListener(NewRegistryEvent.class, event -> event.register(MetalcoreRegistries.TIER_MATERIALS));
+        eventBus.addListener(MetalcoreConfig::onConfigLoad);
+        eventBus.addListener(MetalcoreRegistries::registerRegistries);
         eventBus.addListener(MetalcoreDatapackRegistries::registerDatapackRegistries);
 
         eventBus.addListener(MetalcoreItems::appendItems);
         eventBus.addListener(MetalcoreDataGenerators::gatherData);
 
         ModLoadingContext.get().getActiveContainer().registerConfig(ModConfig.Type.SERVER, MetalcoreConfig.SERVER_SPEC);
+        ModLoadingContext.get().getActiveContainer().registerConfig(ModConfig.Type.CLIENT, MetalcoreConfig.CLIENT_SPEC);
     }
 }

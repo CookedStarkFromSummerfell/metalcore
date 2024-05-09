@@ -1,0 +1,52 @@
+{
+  "values": {
+    "metalcore:copper_bell": {
+      "waxed": "metalcore:waxed_copper_bell"
+    },
+    "metalcore:copper_fan": {
+      "waxed": "metalcore:waxed_copper_fan"
+    },
+    "metalcore:copper_pipe": {
+      "waxed": "metalcore:waxed_copper_pipe"
+    },
+    "metalcore:copper_spikes": {
+      "waxed": "metalcore:waxed_copper_spikes"
+    },
+    "metalcore:exposed_copper_bell": {
+      "waxed": "metalcore:waxed_exposed_copper_bell"
+    },
+    "metalcore:exposed_copper_fan": {
+      "waxed": "metalcore:waxed_exposed_copper_fan"
+    },
+    "metalcore:exposed_copper_pipe": {
+      "waxed": "metalcore:waxed_exposed_copper_pipe"
+    },
+    "metalcore:exposed_copper_spikes": {
+      "waxed": "metalcore:waxed_exposed_copper_spikes"
+    },
+    "metalcore:oxidized_copper_bell": {
+      "waxed": "metalcore:waxed_oxidized_copper_bell"
+    },
+    "metalcore:oxidized_copper_fan": {
+      "waxed": "metalcore:waxed_oxidized_copper_fan"
+    },
+    "metalcore:oxidized_copper_pipe": {
+      "waxed": "metalcore:waxed_oxidized_copper_pipe"
+    },
+    "metalcore:oxidized_copper_spikes": {
+      "waxed": "metalcore:waxed_oxidized_copper_spikes"
+    },
+    "metalcore:weathered_copper_bell": {
+      "waxed": "metalcore:waxed_weathered_copper_bell"
+    },
+    "metalcore:weathered_copper_fan": {
+      "waxed": "metalcore:waxed_weathered_copper_fan"
+    },
+    "metalcore:weathered_copper_spikes": {
+      "waxed": "metalcore:waxed_weathered_copper_spikes"
+    },
+    "metalcore:weathered_coppper_pipe": {
+      "waxed": "metalcore:waxed_weathered_copper_pipe"
+    }
+  }
+}

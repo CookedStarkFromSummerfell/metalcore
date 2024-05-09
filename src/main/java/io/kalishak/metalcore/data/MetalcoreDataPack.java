@@ -19,8 +19,8 @@ public class MetalcoreDataPack extends DatapackBuiltinEntriesProvider {
     private static final RegistrySetBuilder BUILDER = new RegistrySetBuilder()
             .add(Registries.CONFIGURED_FEATURE, MetalcoreOreFeatures::bootstrap)
             .add(Registries.PLACED_FEATURE, MetalcoreOrePlacements::bootstrap)
-            .add(MetalMaterial.REGISTRY_KEY, MetalcoreMetals::bootstrap)
-            .add(AlloyMaterial.REGISTRY_KEY, MetalcoreAlloys::bootstrap);
+            /*.add(MetalMaterial.REGISTRY_KEY, MetalcoreMetals::bootstrap)
+            .add(AlloyMaterial.REGISTRY_KEY, MetalcoreAlloys::bootstrap)*/;
 
     public MetalcoreDataPack(PackOutput output, CompletableFuture<HolderLookup.Provider> registries, String modId) {
         super(output, registries, BUILDER, Set.of(modId));

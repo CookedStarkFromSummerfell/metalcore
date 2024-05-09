@@ -1,0 +1,20 @@
+{
+  "parent": "minecraft:builtin/entity",
+  "display": {
+    "gui": {
+      "rotation": [
+        30,
+        45,
+        0
+      ],
+      "scale": [
+        0.625,
+        0.625,
+        0.625
+      ]
+    }
+  },
+  "textures": {
+    "particle": "minecraft:block/weathered_copper"
+  }
+}

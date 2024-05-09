@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/bell_floor",
+  "textures": {
+    "particle": "metalcore:block/exposed_copper_bell_bottom"
+  }
+}

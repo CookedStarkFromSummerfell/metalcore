@@ -89,7 +89,7 @@ public class CopperBellBlockEntity extends BlockEntity {
     public static void serverTick(Level pLevel, BlockPos pPos, BlockState pState, CopperBellBlockEntity pBlockEntity) {
         tick(pLevel, pPos, pState, pBlockEntity, CopperBellBlockEntity::makeRaidersGlow);
 
-        if (pBlockEntity.getBlockState().getBlock() instanceof WeatheringCopper weatheringCopper) {
+        if (pBlockEntity.getBlockState().getBlock() instanceof WeatheringCopper weatheringCopper && pLevel instanceof ServerLevel) {
             weatheringCopper.changeOverTime(pState, (ServerLevel) pLevel, pPos, pLevel.random);
         }
     }

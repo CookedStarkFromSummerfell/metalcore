@@ -1,27 +1,32 @@
 package io.kalishak.metalcore.world.level.block;
 
-import io.kalishak.metalcore.api.block.WeatheringCopperBaseBlock;
+import com.mojang.serialization.MapCodec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
+import io.kalishak.metalcore.api.block.WeatheringCopperHolder;
 import net.minecraft.core.Direction;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.HorizontalDirectionalBlock;
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.BooleanProperty;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
 
-public class WeatheringCopperFanBlock extends WeatheringCopperBaseBlock {
-    public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
-    public static final BooleanProperty POWERED = BlockStateProperties.POWERED;
+public class WeatheringCopperFanBlock extends CopperFanBlock implements WeatheringCopperHolder {
+    public static final MapCodec<WeatheringCopperFanBlock> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
+            WeatherState.CODEC.fieldOf("weathering_state").forGetter(WeatheringCopperFanBlock::getAge),
+            propertiesCodec()
+    ).apply(instance, WeatheringCopperFanBlock::new));
+
+    private final WeatherState weatherState;
 
     public WeatheringCopperFanBlock(WeatherState weatherState, Properties properties) {
-        super(weatherState, properties);
+        super(properties);
+        this.weatherState = weatherState;
 
         registerDefaultState(getStateDefinition().any().setValue(FACING, Direction.NORTH).setValue(POWERED, false));
     }
 
     @Override
-    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
-        pBuilder.add(FACING, POWERED);
+    protected MapCodec<WeatheringCopperFanBlock> codec() {
+        return CODEC;
+    }
+
+    @Override
+    public WeatherState getAge() {
+        return this.weatherState;
     }
 }
