@@ -7,11 +7,13 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.Tiers;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 public final class MetalcoreTiers {
     public static final TierMaterial STEEL_VANILLA = new TierMaterial(320, 5.0F, 3.0F, BlockTags.INCORRECT_FOR_IRON_TOOL, 9, Ingredient.of(MetalItemTags.INGOTS_STEEL));
+    public static final TierMaterial COPPER_VANILLA = new TierMaterial(216, 4.0F, 1.5F, BlockTags.INCORRECT_FOR_STONE_TOOL, 11, Ingredient.of(Tags.Items.INGOTS_COPPER));
     public static final DeferredRegister<TierMaterial> TIERS = DeferredRegister.create(TierMaterial.REGISTRY_KEY, Metalcore.MODID);
 
     public static final DeferredHolder<TierMaterial, TierMaterial> WOOD = TIERS.register("wood", () -> TierMaterial
@@ -29,6 +31,9 @@ public final class MetalcoreTiers {
 
     public static final DeferredHolder<TierMaterial, TierMaterial> STEEL = TIERS.register("steel", () -> new TierMaterial(
             320, 5.0F, 3.0F, BlockTags.INCORRECT_FOR_IRON_TOOL, 9, Ingredient.of(MetalItemTags.INGOTS_STEEL))
+    );
+    public static final DeferredHolder<TierMaterial, TierMaterial> COPPER = TIERS.register("copper", () -> new TierMaterial(
+            216, 4.0F, 1.5F, BlockTags.INCORRECT_FOR_STONE_TOOL, 11, Ingredient.of(Tags.Items.INGOTS_COPPER))
     );
 
     public static void init(IEventBus bus) {

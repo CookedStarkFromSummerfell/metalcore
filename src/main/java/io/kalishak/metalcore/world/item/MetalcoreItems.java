@@ -1,6 +1,7 @@
 package io.kalishak.metalcore.world.item;
 
 import io.kalishak.metalcore.Metalcore;
+import io.kalishak.metalcore.world.entity.CopperBoat;
 import io.kalishak.metalcore.world.level.block.MetalcoreBlocks;
 import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
@@ -96,12 +97,34 @@ public final class MetalcoreItems {
     public static final DeferredItem<PickaxeItem> STEEL_PICKAXE = ITEMS.register("steel_pickaxe", () -> new PickaxeItem(MetalcoreTiers.STEEL_VANILLA, new Item.Properties().attributes(PickaxeItem.createAttributes(MetalcoreTiers.STEEL_VANILLA, 1.0F, -2.8F))));
     public static final DeferredItem<ShovelItem> STEEL_SHOVEL = ITEMS.register("steel_shovel", () -> new ShovelItem(MetalcoreTiers.STEEL_VANILLA, new Item.Properties().attributes(ShovelItem.createAttributes(MetalcoreTiers.STEEL_VANILLA, 1.5F, -3.0F))));
     public static final DeferredItem<SwordItem> STEEL_SWORD = ITEMS.register("steel_sword", () -> new SwordItem(MetalcoreTiers.STEEL_VANILLA, new Item.Properties().attributes(SwordItem.createAttributes(MetalcoreTiers.STEEL_VANILLA, 3, -2.4F))));
+    public static final DeferredItem<WeatheringAxeItem> COPPER_AXE = ITEMS.register("copper_axe", () -> new WeatheringAxeItem(MetalcoreTiers.COPPER_VANILLA, new Item.Properties().attributes(AxeItem.createAttributes(MetalcoreTiers.COPPER_VANILLA, 6.0F, -3.1F))));
+    public static final DeferredItem<WeatheringHoeItem> COPPER_HOE = ITEMS.register("copper_hoe", () -> new WeatheringHoeItem(MetalcoreTiers.COPPER_VANILLA, new Item.Properties().attributes(HoeItem.createAttributes(MetalcoreTiers.COPPER_VANILLA, -2.0F, -1.0F))));
+    public static final DeferredItem<WeatheringPickaxeItem> COPPER_PICKAXE = ITEMS.register("copper_pickaxe", () -> new WeatheringPickaxeItem(MetalcoreTiers.COPPER_VANILLA, new Item.Properties().attributes(PickaxeItem.createAttributes(MetalcoreTiers.COPPER_VANILLA, 1.0F, -2.8F))));
+    public static final DeferredItem<WeatheringShovelItem> COPPER_SHOVEL = ITEMS.register("copper_shovel", () -> new WeatheringShovelItem(MetalcoreTiers.COPPER_VANILLA, new Item.Properties().attributes(ShovelItem.createAttributes(MetalcoreTiers.COPPER_VANILLA, 1.5F, -3.0F))));
+    public static final DeferredItem<WeatheringSwordItem> COPPER_SWORD = ITEMS.register("copper_sword", () -> new WeatheringSwordItem(MetalcoreTiers.COPPER_VANILLA, new Item.Properties().attributes(SwordItem.createAttributes(MetalcoreTiers.COPPER_VANILLA, 3, -2.4F))));
     public static final DeferredItem<WeatheringCopperShieldItem> COPPER_SHIELD = ITEMS.register("copper_shield", () -> new WeatheringCopperShieldItem(new Item.Properties().durability(384)));
 
     public static final DeferredItem<ArmorItem> STEEL_HELMET = ITEMS.register("steel_helmet", () -> new ArmorItem(MetalcoreArmorMaterials.STEEL, ArmorItem.Type.HELMET, new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(23))));
     public static final DeferredItem<ArmorItem> STEEL_CHESTPLATE = ITEMS.register("steel_chestplate", () -> new ArmorItem(MetalcoreArmorMaterials.STEEL, ArmorItem.Type.CHESTPLATE, new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(23))));
     public static final DeferredItem<ArmorItem> STEEL_LEGGINGS = ITEMS.register("steel_leggings", () -> new ArmorItem(MetalcoreArmorMaterials.STEEL, ArmorItem.Type.LEGGINGS, new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(23))));
     public static final DeferredItem<ArmorItem> STEEL_BOOTS = ITEMS.register("steel_boots", () -> new ArmorItem(MetalcoreArmorMaterials.STEEL, ArmorItem.Type.BOOTS, new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(23))));
+
+    public static final DeferredItem<CopperBoatItem> COPPER_BOAT = ITEMS.register("copper_boat", () -> new CopperBoatItem(false, CopperBoat.Type.DEFAULT, new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<CopperBoatItem> EXPOSED_COPPER_BOAT = ITEMS.register("exposed_copper_boat", () -> new CopperBoatItem(false, CopperBoat.Type.EXPOSED, new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<CopperBoatItem> WEATHERED_COPPER_BOAT = ITEMS.register("weathered_copper_boat", () -> new CopperBoatItem(false, CopperBoat.Type.WEATHERED, new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<CopperBoatItem> OXIDIZED_COPPER_BOAT = ITEMS.register("oxidized_copper_boat", () -> new CopperBoatItem(false, CopperBoat.Type.OXIDIZED, new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<CopperBoatItem> WAXED_COPPER_BOAT = ITEMS.register("waxed_copper_boat", () -> new CopperBoatItem(true, CopperBoat.Type.DEFAULT, new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<CopperBoatItem> WAXED_EXPOSED_COPPER_BOAT = ITEMS.register("waxed_exposed_copper_boat", () -> new CopperBoatItem(true, CopperBoat.Type.EXPOSED, new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<CopperBoatItem> WAXED_WEATHERED_COPPER_BOAT = ITEMS.register("waxed_weathered_copper_boat", () -> new CopperBoatItem(true, CopperBoat.Type.WEATHERED, new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<CopperBoatItem> WAXED_OXIDIZED_COPPER_BOAT = ITEMS.register("waxed_oxidized_copper_boat", () -> new CopperBoatItem(true, CopperBoat.Type.OXIDIZED, new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<CopperLampBoatItem> COPPER_LAMP_BOAT = ITEMS.register("copper_lamp_boat", () -> new CopperLampBoatItem(false, CopperBoat.Type.DEFAULT, new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<CopperLampBoatItem> EXPOSED_COPPER_LAMP_BOAT = ITEMS.register("exposed_copper_lamp_boat", () -> new CopperLampBoatItem(false, CopperBoat.Type.EXPOSED, new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<CopperLampBoatItem> WEATHERED_COPPER_LAMP_BOAT = ITEMS.register("weathered_copper_lamp_boat", () -> new CopperLampBoatItem(false, CopperBoat.Type.WEATHERED, new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<CopperLampBoatItem> OXIDIZED_COPPER_LAMP_BOAT = ITEMS.register("oxidized_copper_boat", () -> new CopperLampBoatItem(false, CopperBoat.Type.OXIDIZED, new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<CopperLampBoatItem> WAXED_COPPER_LAMP_BOAT = ITEMS.register("waxed_copper_lamp_boat", () -> new CopperLampBoatItem(true, CopperBoat.Type.DEFAULT, new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<CopperLampBoatItem> WAXED_EXPOSED_COPPER_LAMP_BOAT = ITEMS.register("waxed_exposed_copper_lamp_boat", () -> new CopperLampBoatItem(true, CopperBoat.Type.EXPOSED, new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<CopperLampBoatItem> WAXED_WEATHERED_COPPER_LAMP_BOAT = ITEMS.register("waxed_weathered_copper_lamp_boat", () -> new CopperLampBoatItem(true, CopperBoat.Type.WEATHERED, new Item.Properties().stacksTo(1)));
+    public static final DeferredItem<CopperLampBoatItem> WAXED_OXIDIZED_COPPER_LAMP_BOAT = ITEMS.register("waxed_oxidized_copper_lamp_boat", () -> new CopperLampBoatItem(true, CopperBoat.Type.OXIDIZED, new Item.Properties().stacksTo(1)));
 
     public static void init(IEventBus bus) {
         ITEMS.register(bus);

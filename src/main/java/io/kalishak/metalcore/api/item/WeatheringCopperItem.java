@@ -4,8 +4,11 @@ import com.google.common.collect.Maps;
 import io.kalishak.metalcore.api.block.WeatheringCopperHolder;
 import io.kalishak.metalcore.component.MetalcoreComponents;
 import net.minecraft.Util;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
@@ -20,6 +23,12 @@ public interface WeatheringCopperItem {
         map.put(WeatheringCopperHolder.WeatherState.OXIDIZED, 0.45F);
     });
 
+    ResourceLocation WEATHERING_STATE_PREDICATE = new ResourceLocation("c:weathering_state");
+
+    static float getPredicate(ItemStack stack, LivingEntity livingEntity) {
+        return (float) getWeatheredState(stack).ordinal();
+    }
+
     static int durabilityForWeatheredState(ItemStack stack) {
         WeatheredComponent weatheredComponent = stack.get(MetalcoreComponents.WEATHERED_ITEM);
         int damage = stack.getDamageValue();
@@ -31,13 +40,17 @@ public interface WeatheringCopperItem {
         return damage;
     }
 
-    default @Nullable WeatheredComponent getWeatheredComponent(ItemStack stack) {
+    static @Nullable WeatheredComponent getWeatheredComponent(ItemStack stack) {
         return stack.get(MetalcoreComponents.WEATHERED_ITEM);
     }
 
-    default WeatheringCopperHolder.WeatherState getWeatheredState(ItemStack stack) {
+    static WeatheringCopperHolder.WeatherState getWeatheredState(ItemStack stack) {
         WeatheredComponent weatheredComponent = getWeatheredComponent(stack);
         return weatheredComponent != null ? weatheredComponent.age() : WeatheringCopperHolder.WeatherState.UNAFFECTED;
+    }
+
+    static Component getTranslatedNameWithState(ItemStack stack) {
+        return Component.translatable("tooltip.metalcore.weathering_state", stack.getDisplayName());
     }
 
     default WeatheredComponent nextState(WeatheredComponent weatheredComponent) {
@@ -64,5 +77,13 @@ public interface WeatheringCopperItem {
         }
     }
 
-    float getChance(ItemStack stack);
+    default float getChance(ItemStack stack) {
+        var component = getWeatheredComponent(stack);
+
+        if (component == null) {
+            return 0.0F;
+        }
+
+        return component.age() == WeatheringCopperHolder.WeatherState.UNAFFECTED ? 0.75F : 1.0F;
+    }
 }

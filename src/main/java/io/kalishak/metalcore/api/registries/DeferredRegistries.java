@@ -4,7 +4,10 @@ import io.kalishak.metalcore.api.tier.TierMaterial;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
 import net.neoforged.neoforge.registries.DeferredRegister;
+import org.jetbrains.annotations.ApiStatus;
 
+@Deprecated
+@ApiStatus.ScheduledForRemoval(inVersion = "1.0.0")
 public class DeferredRegistries<T> extends DeferredRegister<T> {
     protected DeferredRegistries(ResourceKey<? extends Registry<T>> registryKey, String namespace) {
         super(registryKey, namespace);

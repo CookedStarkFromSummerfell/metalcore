@@ -3,7 +3,9 @@ package io.kalishak.metalcore.data.client;
 import com.google.common.collect.ImmutableList;
 import io.kalishak.metalcore.Metalcore;
 import io.kalishak.metalcore.api.block.SixwayStorageBlock;
+import io.kalishak.metalcore.api.block.WeatheringCopperHolder;
 import io.kalishak.metalcore.api.item.TieredToolItem;
+import io.kalishak.metalcore.api.item.WeatheringCopperItem;
 import io.kalishak.metalcore.world.item.MetalcoreItems;
 import io.kalishak.metalcore.world.item.WeatheringCopperShieldItem;
 import io.kalishak.metalcore.world.level.block.CopperBellBlock;
@@ -15,6 +17,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
+import net.neoforged.neoforge.client.model.generators.ItemModelBuilder;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -31,13 +34,15 @@ public class MetalItemModelsProvider extends ItemModelProvider {
     protected void registerModels() {
         var blackList = ImmutableList.<Item>builder()
                 .add(
-                        MetalcoreItems.COPPER_SHIELD.get(),
+                        MetalcoreItems.COPPER_AXE.get(), MetalcoreItems.COPPER_HOE.get(), MetalcoreItems.COPPER_PICKAXE.get(), MetalcoreItems.COPPER_SHOVEL.get(), MetalcoreItems.COPPER_SWORD.get(), MetalcoreItems.COPPER_SHIELD.get(),
                         MetalcoreItems.COPPER_PIPE.get(), MetalcoreItems.EXPOSED_COPPER_PIPE.get(), MetalcoreItems.WEATHERED_COPPER_PIPE.get(), MetalcoreItems.OXIDIZED_COPPER_PIPE.get(),
                         MetalcoreItems.WAXED_COPPER_PIPE.get(), MetalcoreItems.WAXED_EXPOSED_COPPER_PIPE.get(), MetalcoreItems.WAXED_WEATHERED_COPPER_PIPE.get(), MetalcoreItems.WAXED_OXIDIZED_COPPER_PIPE.get(),
                         MetalcoreItems.COPPER_BELL.get(), MetalcoreItems.EXPOSED_COPPER_BELL.get(), MetalcoreItems.WEATHERED_COPPER_BELL.get(), MetalcoreItems.OXIDIZED_COPPER_BELL.get(),
                         MetalcoreItems.WAXED_COPPER_BELL.get(), MetalcoreItems.WAXED_EXPOSED_COPPER_BELL.get(), MetalcoreItems.WAXED_WEATHERED_COPPER_BELL.get(), MetalcoreItems.WAXED_OXIDIZED_COPPER_BELL.get(),
                         MetalcoreItems.COPPER_SPIKES.get(), MetalcoreItems.EXPOSED_COPPER_SPIKES.get(), MetalcoreItems.WEATHERED_COPPER_SPIKES.get(), MetalcoreItems.OXIDIZED_COPPER_SPIKES.get(),
-                        MetalcoreItems.WAXED_COPPER_SPIKES.get(), MetalcoreItems.WAXED_EXPOSED_COPPER_SPIKES.get(), MetalcoreItems.WAXED_WEATHERED_COPPER_SPIKES.get(), MetalcoreItems.WAXED_OXIDIZED_COPPER_SPIKES.get()
+                        MetalcoreItems.WAXED_COPPER_SPIKES.get(), MetalcoreItems.WAXED_EXPOSED_COPPER_SPIKES.get(), MetalcoreItems.WAXED_WEATHERED_COPPER_SPIKES.get(), MetalcoreItems.WAXED_OXIDIZED_COPPER_SPIKES.get(),
+                        MetalcoreItems.WAXED_COPPER_BOAT.get(), MetalcoreItems.WAXED_EXPOSED_COPPER_BOAT.get(), MetalcoreItems.WAXED_WEATHERED_COPPER_BOAT.get(), MetalcoreItems.WAXED_OXIDIZED_COPPER_BOAT.get(),
+                        MetalcoreItems.WAXED_COPPER_LAMP_BOAT.get(), MetalcoreItems.WAXED_EXPOSED_COPPER_LAMP_BOAT.get(), MetalcoreItems.WAXED_WEATHERED_COPPER_LAMP_BOAT.get(), MetalcoreItems.WAXED_OXIDIZED_COPPER_LAMP_BOAT.get()
                 )
                 .build();
         var items = BuiltInRegistries.ITEM.entrySet()
@@ -49,6 +54,11 @@ public class MetalItemModelsProvider extends ItemModelProvider {
 
 
         shield(MetalcoreItems.COPPER_SHIELD.get());
+        weatheringTool(MetalcoreItems.COPPER_AXE.get());
+        weatheringTool(MetalcoreItems.COPPER_HOE.get());
+        weatheringTool(MetalcoreItems.COPPER_PICKAXE.get());
+        weatheringTool(MetalcoreItems.COPPER_SHOVEL.get());
+        weatheringTool(MetalcoreItems.COPPER_SWORD.get());
 
         entityBuiltin(MetalcoreItems.COPPER_PIPE.get(), id(Items.COPPER_BLOCK));
         entityBuiltin(MetalcoreItems.EXPOSED_COPPER_PIPE.get(), id(Items.EXPOSED_COPPER));
@@ -74,6 +84,14 @@ public class MetalItemModelsProvider extends ItemModelProvider {
         waxedItem(MetalcoreItems.WAXED_EXPOSED_COPPER_SPIKES.get());
         waxedItem(MetalcoreItems.WAXED_WEATHERED_COPPER_SPIKES.get());
         waxedItem(MetalcoreItems.WAXED_OXIDIZED_COPPER_SPIKES.get());
+        waxedItem(MetalcoreItems.WAXED_COPPER_BOAT.get());
+        waxedItem(MetalcoreItems.WAXED_EXPOSED_COPPER_BOAT.get());
+        waxedItem(MetalcoreItems.WAXED_WEATHERED_COPPER_BOAT.get());
+        waxedItem(MetalcoreItems.WAXED_OXIDIZED_COPPER_BOAT.get());
+        waxedItem(MetalcoreItems.WAXED_COPPER_LAMP_BOAT.get());
+        waxedItem(MetalcoreItems.WAXED_EXPOSED_COPPER_LAMP_BOAT.get());
+        waxedItem(MetalcoreItems.WAXED_WEATHERED_COPPER_LAMP_BOAT.get());
+        waxedItem(MetalcoreItems.WAXED_OXIDIZED_COPPER_LAMP_BOAT.get());
 
         for (Item item : items) {
             if (item instanceof BlockItem) {
@@ -110,6 +128,28 @@ public class MetalItemModelsProvider extends ItemModelProvider {
                 .end();
     }
 
+    private ModelFile weatheringTool(Item itemIn, WeatheringCopperHolder.WeatherState weatherState) {
+        return getBuilder(weatherState + "_" + name(itemIn))
+                .parent(new ModelFile.UncheckedModelFile("item/handheld"))
+                .texture("layer0", modLoc(weatherState + "_" + name(itemIn)));
+    }
+
+    private void weatheringTool(Item itemIn) {
+        basicTool(itemIn)
+                .override()
+                .predicate(WeatheringCopperItem.WEATHERING_STATE_PREDICATE, 1.0F)
+                .model(weatheringTool(itemIn, WeatheringCopperHolder.WeatherState.EXPOSED))
+                .end()
+                .override()
+                .predicate(WeatheringCopperItem.WEATHERING_STATE_PREDICATE, 2.0F)
+                .model(weatheringTool(itemIn, WeatheringCopperHolder.WeatherState.WEATHERED))
+                .end()
+                .override()
+                .predicate(WeatheringCopperItem.WEATHERING_STATE_PREDICATE, 3.0F)
+                .model(weatheringTool(itemIn, WeatheringCopperHolder.WeatherState.OXIDIZED))
+                .end();
+    }
+
     private void waxedItem(Item itemIn, ResourceLocation texture) {
         getBuilder(name(itemIn))
                 .parent(new ModelFile.UncheckedModelFile("item/generated"))
@@ -126,8 +166,8 @@ public class MetalItemModelsProvider extends ItemModelProvider {
                 .parent(new ModelFile.UncheckedModelFile(new ResourceLocation(Metalcore.MODID, "block/" + name(item))));
     }
 
-    private void basicTool(Item item) {
-        getBuilder(name(item))
+    private ItemModelBuilder basicTool(Item item) {
+        return getBuilder(name(item))
                 .parent(new ModelFile.UncheckedModelFile(new ResourceLocation("item/handheld")))
                 .texture("layer0", modLoc(name(item)).withPrefix("item/"));
     }

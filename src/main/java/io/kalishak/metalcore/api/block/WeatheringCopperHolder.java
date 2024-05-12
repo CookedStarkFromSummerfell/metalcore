@@ -3,8 +3,11 @@ package io.kalishak.metalcore.api.block;
 import com.mojang.serialization.Codec;
 import io.kalishak.metalcore.api.datamaps.MetalcoreApiDatamaps;
 import io.kalishak.metalcore.api.datamaps.WeatheringCopperDataMap;
+import io.netty.buffer.ByteBuf;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.network.codec.ByteBufCodecs;
+import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.ChangeOverTimeBlock;
@@ -70,6 +73,7 @@ public interface WeatheringCopperHolder extends ChangeOverTimeBlock<WeatheringCo
         OXIDIZED("oxidized");
 
         public static final Codec<WeatherState> CODEC = StringRepresentable.fromEnum(WeatherState::values);
+        public static final StreamCodec<ByteBuf, WeatherState> STREAM_CODEC = ByteBufCodecs.fromCodec(CODEC);
         private final String name;
 
         WeatherState(String pName) {
