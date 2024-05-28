@@ -4,6 +4,7 @@ import com.mojang.serialization.Codec;
 import io.kalishak.metalcore.api.datamaps.MetalcoreApiDatamaps;
 import io.kalishak.metalcore.api.datamaps.WeatheringCopperDataMap;
 import io.netty.buffer.ByteBuf;
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.codec.ByteBufCodecs;
@@ -83,6 +84,14 @@ public interface WeatheringCopperHolder extends ChangeOverTimeBlock<WeatheringCo
         @Override
         public String getSerializedName() {
             return this.name;
+        }
+
+        public ChatFormatting getTextColor() {
+            return switch (this) {
+                case WEATHERED -> ChatFormatting.DARK_GREEN;
+                case EXPOSED -> ChatFormatting.GREEN;
+                default -> ChatFormatting.DARK_GRAY;
+            };
         }
     }
 }

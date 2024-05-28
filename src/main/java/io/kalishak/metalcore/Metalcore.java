@@ -1,9 +1,11 @@
 package io.kalishak.metalcore;
 
+import io.kalishak.metalcore.api.registries.MetalcoreApiGameRules;
 import io.kalishak.metalcore.component.MetalcoreComponents;
 import io.kalishak.metalcore.config.MetalcoreConfig;
 import io.kalishak.metalcore.data.MetalcoreDataGenerators;
 import io.kalishak.metalcore.data.MetalcoreDatapackRegistries;
+import io.kalishak.metalcore.world.entity.MetalcoreEntityTypes;
 import io.kalishak.metalcore.world.item.MetalcoreArmorMaterials;
 import io.kalishak.metalcore.world.item.MetalcoreCreativeModeTabs;
 import io.kalishak.metalcore.world.item.MetalcoreItems;
@@ -25,17 +27,21 @@ public class Metalcore {
     public static final Logger LOGGER = LoggerFactory.getLogger(Metalcore.class);
 
     public Metalcore(IEventBus eventBus) {
+        eventBus.addListener(MetalcoreRegistries::registerRegistries);
+        eventBus.addListener(MetalcoreDatapackRegistries::registerDatapackRegistries);
+
+        MetalcoreApiGameRules.init();
+
         MetalcoreArmorMaterials.init(eventBus);
         MetalcoreBlocks.init(eventBus);
         MetalcoreBlockEntityType.init(eventBus);
         MetalcoreCreativeModeTabs.init(eventBus);
         MetalcoreComponents.init(eventBus);
+        MetalcoreEntityTypes.init(eventBus);
         MetalcoreTiers.init(eventBus);
         MetalcoreItems.init(eventBus);
 
         eventBus.addListener(MetalcoreConfig::onConfigLoad);
-        eventBus.addListener(MetalcoreRegistries::registerRegistries);
-        eventBus.addListener(MetalcoreDatapackRegistries::registerDatapackRegistries);
 
         eventBus.addListener(MetalcoreItems::appendItems);
         eventBus.addListener(MetalcoreDataGenerators::gatherData);

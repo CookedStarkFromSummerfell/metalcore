@@ -1,0 +1,26 @@
+{
+  "parent": "minecraft:item/handheld",
+  "overrides": [
+    {
+      "model": "metalcore:item/exposed_copper_shovel",
+      "predicate": {
+        "c:weathering_state": 1.0
+      }
+    },
+    {
+      "model": "metalcore:item/weathered_copper_shovel",
+      "predicate": {
+        "c:weathering_state": 2.0
+      }
+    },
+    {
+      "model": "metalcore:item/oxidized_copper_shovel",
+      "predicate": {
+        "c:weathering_state": 3.0
+      }
+    }
+  ],
+  "textures": {
+    "layer0": "metalcore:item/copper_shovel"
+  }
+}

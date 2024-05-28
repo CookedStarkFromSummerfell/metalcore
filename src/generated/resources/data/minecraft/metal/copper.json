@@ -1,0 +1,12 @@
+{
+  "hardening_time": 120,
+  "hardness": 8.9,
+  "melting_point": 1357.0,
+  "overlay_tint_color": 11364390,
+  "resistance": 4.5,
+  "tint_color": 14711837,
+  "valid_blocks": "metalcore:metals/copper",
+  "valid_fluids": "c:molten/copper",
+  "valid_items": "metalcore:metals/copper",
+  "weathering": true
+}

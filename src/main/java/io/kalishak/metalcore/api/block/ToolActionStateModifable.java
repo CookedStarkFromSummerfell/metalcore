@@ -8,7 +8,6 @@ import net.neoforged.neoforge.common.ToolAction;
 import net.neoforged.neoforge.common.ToolActions;
 
 public interface ToolActionStateModifable {
-
     default BlockState applyToolAction(BlockState state, UseOnContext context, ToolAction toolAction) {
         ItemStack itemStack = context.getItemInHand();
 

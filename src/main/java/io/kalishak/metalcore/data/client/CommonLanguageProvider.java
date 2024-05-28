@@ -1,5 +1,6 @@
 package io.kalishak.metalcore.data.client;
 
+import io.kalishak.metalcore.api.block.WeatheringCopperHolder;
 import io.kalishak.metalcore.tags.MetalBlockTags;
 import io.kalishak.metalcore.tags.MetalFluidTags;
 import io.kalishak.metalcore.tags.MetalItemTags;
@@ -13,6 +14,8 @@ public class CommonLanguageProvider extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
+        addWeatheringState();
+
         add(MetalBlockTags.ALUMINUM_ORES, "Aluminum Ores");
         add(MetalBlockTags.TIN_ORES, "Tin Ores");
         add(MetalBlockTags.LEAD_ORES, "Lead Ores");
@@ -81,5 +84,15 @@ public class CommonLanguageProvider extends LanguageProvider {
         add(MetalItemTags.DUSTS_SILVER, "Silver Dusts");
         add(MetalItemTags.DUSTS_STEEL, "Steel Dusts");
         add(MetalItemTags.DUSTS_TIN, "Tin Dusts");
+    }
+
+    private void addWeatheringState() {
+        for (var state : WeatheringCopperHolder.WeatherState.values()) {
+            String stateName = state.getSerializedName();
+            String key = "item.metalcore.weathering_state." + stateName;
+            String value = stateName.substring(0, 1).toUpperCase() + stateName.substring(1);
+
+            add(key, value);
+        }
     }
 }

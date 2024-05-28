@@ -1,10 +1,12 @@
 package io.kalishak.metalcore.client;
 
 import io.kalishak.metalcore.Metalcore;
+import io.kalishak.metalcore.api.block.state.properties.MetalType;
 import io.kalishak.metalcore.world.entity.CopperBoat;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.state.properties.WoodType;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 
@@ -20,6 +22,16 @@ public final class MetalcoreModelLayers {
 
     public static ModelLayerLocation createCopperBoatModel(CopperBoat.Type type) {
         return create("copper_boat/" + type.getName());
+    }
+
+    public static ModelLayerLocation createSignModelName(MetalType metalType) {
+        ResourceLocation location = new ResourceLocation(Metalcore.MODID, metalType.name());
+        return new ModelLayerLocation(location.withPrefix("weathering_sign/"), "main");
+    }
+
+    public static ModelLayerLocation createHangingSignModelName(MetalType metalType) {
+        ResourceLocation location = new ResourceLocation(Metalcore.MODID, metalType.name());
+        return new ModelLayerLocation(location.withPrefix("weathering_hanging_sign/"), "main");
     }
 
     private static ModelLayerLocation create(String assetName) {

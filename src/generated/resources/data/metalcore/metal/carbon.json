@@ -1,0 +1,11 @@
+{
+  "hardening_time": 355,
+  "hardness": 2.9,
+  "melting_point": 3555.0,
+  "overlay_tint_color": 1841690,
+  "resistance": 0.9,
+  "tint_color": 2500134,
+  "valid_blocks": "c:storage_blocks/coal",
+  "valid_items": "c:storage_blocks/coal",
+  "weathering": false
+}

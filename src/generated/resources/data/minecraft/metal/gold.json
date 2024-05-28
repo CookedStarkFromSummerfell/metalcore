@@ -1,0 +1,12 @@
+{
+  "hardening_time": 118,
+  "hardness": 19.3,
+  "melting_point": 1337.0,
+  "overlay_tint_color": 9537545,
+  "resistance": 9.0,
+  "tint_color": 15918111,
+  "valid_blocks": "metalcore:metals/gold",
+  "valid_fluids": "c:molten/gold",
+  "valid_items": "metalcore:metals/gold",
+  "weathering": false
+}

@@ -1,0 +1,12 @@
+{
+  "hardening_time": 110,
+  "hardness": 8.0,
+  "melting_point": 940.0,
+  "overlay_tint_color": 6372886,
+  "resistance": 6.0,
+  "tint_color": 7684616,
+  "valid_blocks": "metalcore:alloys/bronze",
+  "valid_fluids": "c:molten/bronze",
+  "valid_items": "metalcore:alloys/bronze",
+  "weathering": false
+}

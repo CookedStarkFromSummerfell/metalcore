@@ -1,0 +1,12 @@
+{
+  "hardening_time": 109,
+  "hardness": 7.8,
+  "melting_point": 1808.0,
+  "overlay_tint_color": 10262161,
+  "resistance": 9.1,
+  "tint_color": 13750479,
+  "valid_blocks": "metalcore:metals/iron",
+  "valid_fluids": "c:molten/iron",
+  "valid_items": "metalcore:metals/iron",
+  "weathering": true
+}

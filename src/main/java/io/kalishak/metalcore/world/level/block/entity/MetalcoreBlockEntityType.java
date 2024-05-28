@@ -27,8 +27,20 @@ public final class MetalcoreBlockEntityType {
                     MetalcoreBlocks.WAXED_COPPER_BELL.get(), MetalcoreBlocks.WAXED_EXPOSED_COPPER_BELL.get(), MetalcoreBlocks.WAXED_WEATHERED_COPPER_BELL.get(), MetalcoreBlocks.WAXED_OXIDIZED_COPPER_BELL.get())
             .build(Util.fetchChoiceType(References.BLOCK_ENTITY, "copper_bell")));
     public static final Supplier<BlockEntityType<CopperFanBlockEntity>> COPPER_FAN = BLOCK_ENTITIES.register("copper_fan", () -> BlockEntityType.Builder.of(CopperFanBlockEntity::new,
-            MetalcoreBlocks.COPPER_FAN.get(), MetalcoreBlocks.EXPOSED_COPPER_FAN.get(), MetalcoreBlocks.WEATHERED_COPPER_FAN.get(), MetalcoreBlocks.OXIDIZED_COPPER_FAN.get())
+                    MetalcoreBlocks.COPPER_FAN.get(), MetalcoreBlocks.EXPOSED_COPPER_FAN.get(), MetalcoreBlocks.WEATHERED_COPPER_FAN.get(), MetalcoreBlocks.OXIDIZED_COPPER_FAN.get())
             .build(Util.fetchChoiceType(References.BLOCK_ENTITY, "copper_fan")));
+    public static final Supplier<BlockEntityType<CopperSignBlockEntity>> COPPER_SIGN = BLOCK_ENTITIES.register("copper_sign", () -> BlockEntityType.Builder.of(CopperSignBlockEntity::new,
+                    MetalcoreBlocks.COPPER_SIGN.get(), MetalcoreBlocks.COPPER_WALL_SIGN.get(), MetalcoreBlocks.WAXED_COPPER_SIGN.get(), MetalcoreBlocks.WAXED_COPPER_WALL_SIGN.get(),
+                    MetalcoreBlocks.EXPOSED_COPPER_SIGN.get(), MetalcoreBlocks.EXPOSED_COPPER_WALL_SIGN.get(), MetalcoreBlocks.WAXED_EXPOSED_COPPER_SIGN.get(), MetalcoreBlocks.WAXED_EXPOSED_COPPER_WALL_SIGN.get(),
+                    MetalcoreBlocks.WEATHERED_COPPER_SIGN.get(), MetalcoreBlocks.WEATHERED_COPPER_WALL_SIGN.get(), MetalcoreBlocks.WAXED_WEATHERED_COPPER_SIGN.get(), MetalcoreBlocks.WAXED_WEATHERED_COPPER_WALL_SIGN.get(),
+                    MetalcoreBlocks.OXIDIZED_COPPER_SIGN.get(), MetalcoreBlocks.OXIDIZED_COPPER_WALL_SIGN.get(), MetalcoreBlocks.WAXED_OXIDIZED_COPPER_SIGN.get(), MetalcoreBlocks.WAXED_OXIDIZED_COPPER_WALL_SIGN.get())
+            .build(Util.fetchChoiceType(References.BLOCK_ENTITY, "copper_sign")));
+    public static final Supplier<BlockEntityType<HangingCopperSignBlockEntity>> HANGING_COPPER_SIGN = BLOCK_ENTITIES.register("hanging_copper_sign", () -> BlockEntityType.Builder.of(HangingCopperSignBlockEntity::new,
+                    MetalcoreBlocks.COPPER_HANGING_SIGN.get(), MetalcoreBlocks.COPPER_WALL_HANGING_SIGN.get(), MetalcoreBlocks.WAXED_COPPER_HANGING_SIGN.get(), MetalcoreBlocks.WAXED_COPPER_WALL_HANGING_SIGN.get(),
+                    MetalcoreBlocks.EXPOSED_COPPER_HANGING_SIGN.get(), MetalcoreBlocks.EXPOSED_COPPER_WALL_HANGING_SIGN.get(), MetalcoreBlocks.WAXED_EXPOSED_COPPER_HANGING_SIGN.get(), MetalcoreBlocks.WAXED_EXPOSED_COPPER_WALL_HANGING_SIGN.get(),
+                    MetalcoreBlocks.WEATHERED_COPPER_HANGING_SIGN.get(), MetalcoreBlocks.WEATHERED_COPPER_WALL_HANGING_SIGN.get(), MetalcoreBlocks.WAXED_WEATHERED_COPPER_HANGING_SIGN.get(), MetalcoreBlocks.WAXED_WEATHERED_COPPER_WALL_HANGING_SIGN.get(),
+                    MetalcoreBlocks.OXIDIZED_COPPER_HANGING_SIGN.get(), MetalcoreBlocks.OXIDIZED_COPPER_WALL_HANGING_SIGN.get(), MetalcoreBlocks.WAXED_OXIDIZED_COPPER_HANGING_SIGN.get(), MetalcoreBlocks.WAXED_OXIDIZED_COPPER_WALL_HANGING_SIGN.get())
+            .build(Util.fetchChoiceType(References.BLOCK_ENTITY, "hanging_copper_sign")));
 
     public static void init(IEventBus bus) {
         BLOCK_ENTITIES.register(bus);

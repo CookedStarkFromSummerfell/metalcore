@@ -1,0 +1,12 @@
+{
+  "hardening_time": 45,
+  "hardness": 2.7,
+  "melting_point": 933.0,
+  "overlay_tint_color": 11775142,
+  "resistance": 1.0,
+  "tint_color": 14275276,
+  "valid_blocks": "metalcore:metals/aluminum",
+  "valid_fluids": "c:molten/aluminum",
+  "valid_items": "metalcore:metals/aluminum",
+  "weathering": false
+}

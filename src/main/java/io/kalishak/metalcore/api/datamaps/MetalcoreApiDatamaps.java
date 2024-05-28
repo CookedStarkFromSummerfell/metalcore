@@ -3,6 +3,7 @@ package io.kalishak.metalcore.api.datamaps;
 import com.mojang.serialization.Codec;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.registries.datamaps.DataMapType;
 
@@ -11,6 +12,11 @@ public class MetalcoreApiDatamaps {
     private static final Codec<ResourceKeyDataMap<Block>> UNWAXED_CODEC = ResourceKeyDataMap.codec(Registries.BLOCK, "unwaxed");
     private static final Codec<ResourceKeyDataMap<Block>> STRIPPED_CODEC = ResourceKeyDataMap.codec(Registries.BLOCK, "stripped");
     private static final Codec<ResourceKeyDataMap<Block>> UNSTRIPPED_CODEC = ResourceKeyDataMap.codec(Registries.BLOCK, "unstripped");
+
+    public static final DataMapType<Item, WeatheringItemDataMap> WEATHERING_ITEM = DataMapType
+            .builder(new ResourceLocation("c:weathering_item"), Registries.ITEM, WeatheringItemDataMap.CODEC)
+            .synced(WeatheringItemDataMap.CODEC, true)
+            .build();
 
     public static final DataMapType<Block, WeatheringCopperDataMap> WEATHERING_COPPER = DataMapType
             .builder(new ResourceLocation("c:weathering_copper"), Registries.BLOCK, WeatheringCopperDataMap.CODEC)

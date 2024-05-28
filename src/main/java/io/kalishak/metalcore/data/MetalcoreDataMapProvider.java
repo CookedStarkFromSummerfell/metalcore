@@ -3,10 +3,17 @@ package io.kalishak.metalcore.data;
 import io.kalishak.metalcore.api.datamaps.MetalcoreApiDatamaps;
 import io.kalishak.metalcore.api.datamaps.ResourceKeyDataMap;
 import io.kalishak.metalcore.api.datamaps.WeatheringCopperDataMap;
+import io.kalishak.metalcore.api.datamaps.WeatheringItemDataMap;
+import io.kalishak.metalcore.world.item.MetalcoreItems;
 import io.kalishak.metalcore.world.level.block.MetalcoreBlocks;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.neoforged.neoforge.common.data.DataMapProvider;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -79,5 +86,15 @@ public class MetalcoreDataMapProvider extends DataMapProvider {
                 .add(MetalcoreBlocks.WAXED_EXPOSED_COPPER_FAN, ResourceKeyDataMap.of(MetalcoreBlocks.EXPOSED_COPPER_FAN), false)
                 .add(MetalcoreBlocks.WAXED_WEATHERED_COPPER_FAN, ResourceKeyDataMap.of(MetalcoreBlocks.WEATHERED_COPPER_FAN), false)
                 .add(MetalcoreBlocks.WAXED_OXIDIZED_COPPER_FAN, ResourceKeyDataMap.of(MetalcoreBlocks.OXIDIZED_COPPER_FAN), false);
+
+        builder(MetalcoreApiDatamaps.WEATHERING_ITEM)
+                .add(getId(Items.COPPER_INGOT), WeatheringItemDataMap.withNext(MetalcoreItems.EXPOSED_COPPER_INGOT), false)
+                .add(MetalcoreItems.EXPOSED_COPPER_INGOT, WeatheringItemDataMap.of(Items.COPPER_INGOT, MetalcoreItems.WEATHERED_COPPER_INGOT), false)
+                .add(MetalcoreItems.WEATHERED_COPPER_INGOT, WeatheringItemDataMap.of(MetalcoreItems.EXPOSED_COPPER_INGOT, MetalcoreItems.OXIDIZED_COPPER_INGOT), false)
+                .add(MetalcoreItems.OXIDIZED_COPPER_INGOT, WeatheringItemDataMap.withPrevious(MetalcoreItems.WEATHERED_COPPER_INGOT), false);
+    }
+
+    private ResourceLocation getId(@NotNull Item item) {
+        return BuiltInRegistries.ITEM.getKey(item);
     }
 }

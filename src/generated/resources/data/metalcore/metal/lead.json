@@ -1,0 +1,12 @@
+{
+  "hardening_time": 28,
+  "hardness": 11.3,
+  "melting_point": 600.0,
+  "overlay_tint_color": 6047167,
+  "resistance": 5.3,
+  "tint_color": 8744429,
+  "valid_blocks": "metalcore:metals/lead",
+  "valid_fluids": "c:molten/lead",
+  "valid_items": "metalcore:metals/lead",
+  "weathering": true
+}

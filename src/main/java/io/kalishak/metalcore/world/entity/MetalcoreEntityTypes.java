@@ -4,6 +4,7 @@ import io.kalishak.metalcore.Metalcore;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
+import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
@@ -36,4 +37,8 @@ public final class MetalcoreEntityTypes {
             .clientTrackingRange(10)
             .build("weathering_copper_lamp_boat")
     );
+
+    public static void init(IEventBus bus) {
+        ENTITY_TYPES.register(bus);
+    }
 }

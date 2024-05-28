@@ -1,11 +1,17 @@
 package io.kalishak.metalcore.data.client;
 
+import com.google.common.collect.Maps;
+import io.kalishak.metalcore.api.block.WeatheringCopperHolder;
 import io.kalishak.metalcore.tags.MetalBlockTags;
 import io.kalishak.metalcore.tags.MetalItemTags;
 import io.kalishak.metalcore.world.item.MetalcoreItems;
 import io.kalishak.metalcore.world.level.block.MetalcoreBlocks;
+import net.minecraft.Util;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.LanguageProvider;
+
+import java.util.EnumMap;
+import java.util.Map;
 
 public class MetalLanguageProvider extends LanguageProvider {
     public MetalLanguageProvider(PackOutput output, String modid, String locale) {
@@ -71,6 +77,22 @@ public class MetalLanguageProvider extends LanguageProvider {
         addBlock(MetalcoreBlocks.WAXED_EXPOSED_COPPER_FAN, "Waxed Exposed Copper Fan");
         addBlock(MetalcoreBlocks.WAXED_WEATHERED_COPPER_FAN, "Waxed Weathered Copper Fan");
         addBlock(MetalcoreBlocks.WAXED_OXIDIZED_COPPER_FAN, "Waxed Oxidized Copper Fan");
+        addBlock(MetalcoreBlocks.COPPER_SIGN, "Copper Sign");
+        addBlock(MetalcoreBlocks.COPPER_WALL_SIGN, "Copper Sign");
+        addBlock(MetalcoreBlocks.EXPOSED_COPPER_SIGN, "Exposed Copper Sign");
+        addBlock(MetalcoreBlocks.EXPOSED_COPPER_WALL_SIGN, "Exposed Copper Sign");
+        addBlock(MetalcoreBlocks.WEATHERED_COPPER_SIGN, "Weathered Copper Sign");
+        addBlock(MetalcoreBlocks.WEATHERED_COPPER_WALL_SIGN, "Weathered Copper Sign");
+        addBlock(MetalcoreBlocks.OXIDIZED_COPPER_SIGN, "Oxidized Copper Sign");
+        addBlock(MetalcoreBlocks.OXIDIZED_COPPER_WALL_SIGN, "Oxidized Copper Sign");
+        addBlock(MetalcoreBlocks.WAXED_COPPER_SIGN, "Waxed Copper Sign");
+        addBlock(MetalcoreBlocks.WAXED_COPPER_WALL_SIGN, "Waxed Copper Sign");
+        addBlock(MetalcoreBlocks.WAXED_EXPOSED_COPPER_SIGN, "Waxed Exposed Copper Sign");
+        addBlock(MetalcoreBlocks.WAXED_EXPOSED_COPPER_WALL_SIGN, "Waxed Exposed Copper Sign");
+        addBlock(MetalcoreBlocks.WAXED_WEATHERED_COPPER_SIGN, "Waxed Weathered Copper Sign");
+        addBlock(MetalcoreBlocks.WAXED_WEATHERED_COPPER_WALL_SIGN, "Waxed Weathered Copper Sign");
+        addBlock(MetalcoreBlocks.WAXED_OXIDIZED_COPPER_SIGN, "Waxed Oxidized Copper Sign");
+        addBlock(MetalcoreBlocks.WAXED_OXIDIZED_COPPER_WALL_SIGN, "Waxed Oxidized Copper Sign");
 
         addItem(MetalcoreItems.RAW_ALUMINUM, "Raw Aluminum");
         addItem(MetalcoreItems.ALUMINUM_INGOT, "Aluminum Ingot");
@@ -103,7 +125,16 @@ public class MetalLanguageProvider extends LanguageProvider {
         addItem(MetalcoreItems.STEEL_CHESTPLATE,  "Steel Chestplate");
         addItem(MetalcoreItems.STEEL_LEGGINGS,  "Steel Leggings");
         addItem(MetalcoreItems.STEEL_BOOTS, "Steel Boots");
+        addItem(MetalcoreItems.COPPER_AXE, "Copper Axe");
+        addItem(MetalcoreItems.COPPER_HOE, "Copper Hoe");
+        addItem(MetalcoreItems.COPPER_PICKAXE, "Copper Pickaxe");
+        addItem(MetalcoreItems.COPPER_SHOVEL, "Copper Shovel");
+        addItem(MetalcoreItems.COPPER_SWORD, "Copper Sword");
         addItem(MetalcoreItems.COPPER_SHIELD, "Copper Shield");
+        addItem(MetalcoreItems.WEATHERING_COPPER_HELMET, "Copper Helmet");
+        addItem(MetalcoreItems.WEATHERING_COPPER_CHESTPLATE, "Copper Chestplate");
+        addItem(MetalcoreItems.WEATHERING_COPPER_LEGGINGS, "Copper Leggings");
+        addItem(MetalcoreItems.WEATHERING_COPPER_BOOTS, "Copper Boots");
 
         add(MetalBlockTags.METALS, "Metals");
         add(MetalBlockTags.METAL_ALUMINUM, "Aluminum Metals");

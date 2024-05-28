@@ -1,8 +1,6 @@
 package io.kalishak.metalcore.world.item;
 
-import io.kalishak.metalcore.client.MetalcoreClient;
 import io.kalishak.metalcore.client.renderer.MetalcoreBEWLR;
-import io.kalishak.metalcore.world.level.block.WeatheringCopperPipeBlock;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.block.Block;

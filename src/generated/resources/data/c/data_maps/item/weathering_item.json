@@ -1,0 +1,18 @@
+{
+  "values": {
+    "metalcore:exposed_copper_ingot": {
+      "next_weathering_item": "metalcore:weathered_copper_ingot",
+      "previous_weathering_item": "minecraft:copper_ingot"
+    },
+    "metalcore:oxidized_copper_ingot": {
+      "previous_weathering_item": "metalcore:weathered_copper_ingot"
+    },
+    "metalcore:weathered_copper_ingot": {
+      "next_weathering_item": "metalcore:oxidized_copper_ingot",
+      "previous_weathering_item": "metalcore:exposed_copper_ingot"
+    },
+    "minecraft:copper_ingot": {
+      "next_weathering_item": "metalcore:exposed_copper_ingot"
+    }
+  }
+}

@@ -50,7 +50,7 @@ public class CopperBellRenderer implements BlockEntityRenderer<CopperBellBlockEn
 
     @Override
     public void render(CopperBellBlockEntity pBlockEntity, float pPartialTick, PoseStack pPoseStack, MultiBufferSource pBuffer, int pPackedLight, int pPackedOverlay) {
-        float f = (float)pBlockEntity.ticks + pPartialTick;
+        float f = (float) pBlockEntity.ticks + pPartialTick;
         float f1 = 0.0F;
         float f2 = 0.0F;
         if (pBlockEntity.shaking) {
@@ -68,7 +68,7 @@ public class CopperBellRenderer implements BlockEntityRenderer<CopperBellBlockEn
 
         this.bellBody.xRot = f1;
         this.bellBody.zRot = f2;
-        VertexConsumer vertexconsumer = MetalcoreSheets.getCopperBellMaterial(pBlockEntity.getBlockState().getBlockHolder()).buffer(pBuffer, RenderType::entitySolid);
+        VertexConsumer vertexconsumer = MetalcoreSheets.getCopperBellMaterial(pBlockEntity.getBlockState()).buffer(pBuffer, RenderType::entitySolid);
         this.bellBody.render(pPoseStack, vertexconsumer, pPackedLight, pPackedOverlay);
     }
 }

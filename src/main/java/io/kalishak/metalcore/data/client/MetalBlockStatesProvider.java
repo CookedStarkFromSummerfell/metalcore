@@ -1,10 +1,9 @@
 package io.kalishak.metalcore.data.client;
 
-import io.kalishak.metalcore.world.level.block.CopperFanBlock;
-import io.kalishak.metalcore.world.level.block.CopperSpikesBlock;
+import io.kalishak.metalcore.world.level.block.fan.CopperFanBlock;
+import io.kalishak.metalcore.world.level.block.spikes.CopperSpikesBlock;
 import io.kalishak.metalcore.world.level.block.MetalcoreBlocks;
-import io.kalishak.metalcore.world.level.block.CopperBellBlock;
-import net.minecraft.client.renderer.RenderType;
+import io.kalishak.metalcore.world.level.block.bell.CopperBellBlock;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
@@ -63,14 +62,6 @@ public class MetalBlockStatesProvider extends BlockStateProvider {
         bell(MetalcoreBlocks.WAXED_EXPOSED_COPPER_BELL.get(), MetalcoreBlocks.EXPOSED_COPPER_BELL.get());
         bell(MetalcoreBlocks.WAXED_WEATHERED_COPPER_BELL.get(), MetalcoreBlocks.WEATHERED_COPPER_BELL.get());
         bell(MetalcoreBlocks.WAXED_OXIDIZED_COPPER_BELL.get(), MetalcoreBlocks.OXIDIZED_COPPER_BELL.get());
-        spikes(MetalcoreBlocks.COPPER_SPIKES.get());
-        spikes(MetalcoreBlocks.EXPOSED_COPPER_SPIKES.get());
-        spikes(MetalcoreBlocks.WEATHERED_COPPER_SPIKES.get());
-        spikes(MetalcoreBlocks.OXIDIZED_COPPER_SPIKES.get());
-        spikes(MetalcoreBlocks.WAXED_COPPER_SPIKES.get(), MetalcoreBlocks.COPPER_SPIKES.get());
-        spikes(MetalcoreBlocks.WAXED_EXPOSED_COPPER_SPIKES.get(), MetalcoreBlocks.EXPOSED_COPPER_SPIKES.get());
-        spikes(MetalcoreBlocks.WAXED_WEATHERED_COPPER_SPIKES.get(), MetalcoreBlocks.WEATHERED_COPPER_SPIKES.get());
-        spikes(MetalcoreBlocks.WAXED_OXIDIZED_COPPER_SPIKES.get(), MetalcoreBlocks.OXIDIZED_COPPER_SPIKES.get());
         fan(MetalcoreBlocks.COPPER_FAN.get());
         fan(MetalcoreBlocks.EXPOSED_COPPER_FAN.get());
         fan(MetalcoreBlocks.WEATHERED_COPPER_FAN.get());
@@ -79,6 +70,30 @@ public class MetalBlockStatesProvider extends BlockStateProvider {
         fan(MetalcoreBlocks.WAXED_EXPOSED_COPPER_FAN.get(), MetalcoreBlocks.EXPOSED_COPPER_FAN.get());
         fan(MetalcoreBlocks.WAXED_WEATHERED_COPPER_FAN.get(), MetalcoreBlocks.WEATHERED_COPPER_FAN.get());
         fan(MetalcoreBlocks.WAXED_OXIDIZED_COPPER_FAN.get(), MetalcoreBlocks.OXIDIZED_COPPER_FAN.get());
+        particleOnly(MetalcoreBlocks.COPPER_SIGN.get(), Blocks.COPPER_BLOCK);
+        particleOnly(MetalcoreBlocks.EXPOSED_COPPER_SIGN.get(), Blocks.EXPOSED_COPPER);
+        particleOnly(MetalcoreBlocks.WEATHERED_COPPER_SIGN.get(), Blocks.WEATHERED_COPPER);
+        particleOnly(MetalcoreBlocks.OXIDIZED_COPPER_SIGN.get(), Blocks.OXIDIZED_COPPER);
+        particleOnly(MetalcoreBlocks.COPPER_HANGING_SIGN.get(), Blocks.CUT_COPPER);
+        particleOnly(MetalcoreBlocks.EXPOSED_COPPER_HANGING_SIGN.get(), Blocks.EXPOSED_CUT_COPPER);
+        particleOnly(MetalcoreBlocks.WEATHERED_COPPER_HANGING_SIGN.get(), Blocks.WEATHERED_CUT_COPPER);
+        particleOnly(MetalcoreBlocks.OXIDIZED_COPPER_HANGING_SIGN.get(), Blocks.OXIDIZED_CUT_COPPER);
+        particleOnly(MetalcoreBlocks.WAXED_COPPER_SIGN.get(), Blocks.COPPER_BLOCK);
+        particleOnly(MetalcoreBlocks.WAXED_EXPOSED_COPPER_SIGN.get(), Blocks.EXPOSED_COPPER);
+        particleOnly(MetalcoreBlocks.WAXED_WEATHERED_COPPER_SIGN.get(), Blocks.WEATHERED_COPPER);
+        particleOnly(MetalcoreBlocks.WAXED_OXIDIZED_COPPER_SIGN.get(), Blocks.OXIDIZED_COPPER);
+        particleOnly(MetalcoreBlocks.WAXED_COPPER_HANGING_SIGN.get(), Blocks.CUT_COPPER);
+        particleOnly(MetalcoreBlocks.WAXED_EXPOSED_COPPER_HANGING_SIGN.get(), Blocks.EXPOSED_CUT_COPPER);
+        particleOnly(MetalcoreBlocks.WAXED_WEATHERED_COPPER_HANGING_SIGN.get(), Blocks.WEATHERED_CUT_COPPER);
+        particleOnly(MetalcoreBlocks.WAXED_OXIDIZED_COPPER_HANGING_SIGN.get(), Blocks.OXIDIZED_CUT_COPPER);
+        spikes(MetalcoreBlocks.COPPER_SPIKES.get());
+        spikes(MetalcoreBlocks.EXPOSED_COPPER_SPIKES.get());
+        spikes(MetalcoreBlocks.WEATHERED_COPPER_SPIKES.get());
+        spikes(MetalcoreBlocks.OXIDIZED_COPPER_SPIKES.get());
+        spikes(MetalcoreBlocks.WAXED_COPPER_SPIKES.get(), MetalcoreBlocks.COPPER_SPIKES.get());
+        spikes(MetalcoreBlocks.WAXED_EXPOSED_COPPER_SPIKES.get(), MetalcoreBlocks.EXPOSED_COPPER_SPIKES.get());
+        spikes(MetalcoreBlocks.WAXED_WEATHERED_COPPER_SPIKES.get(), MetalcoreBlocks.WEATHERED_COPPER_SPIKES.get());
+        spikes(MetalcoreBlocks.WAXED_OXIDIZED_COPPER_SPIKES.get(), MetalcoreBlocks.OXIDIZED_COPPER_SPIKES.get());
     }
 
     private ResourceLocation id(Block block) {

@@ -1,0 +1,13 @@
+{
+  "ingredients": [
+    {
+      "amount": 8,
+      "ingredient": "minecraft:iron"
+    },
+    {
+      "amount": 1,
+      "ingredient": "metalcore:carbon"
+    }
+  ],
+  "metal": "metalcore:steel"
+}

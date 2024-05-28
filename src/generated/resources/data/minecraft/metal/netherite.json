@@ -1,0 +1,12 @@
+{
+  "hardening_time": 93,
+  "hardness": 21.3,
+  "melting_point": 1448.0,
+  "overlay_tint_color": 1708813,
+  "resistance": 13.0,
+  "tint_color": 2497039,
+  "valid_blocks": "metalcore:metals/netherite",
+  "valid_fluids": "c:molten/netherite",
+  "valid_items": "metalcore:metals/netherite",
+  "weathering": false
+}

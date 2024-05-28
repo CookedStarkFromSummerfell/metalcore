@@ -1,0 +1,12 @@
+{
+  "hardening_time": 19,
+  "hardness": 7.2,
+  "melting_point": 504.0,
+  "overlay_tint_color": 7766453,
+  "resistance": 5.3,
+  "tint_color": 11516912,
+  "valid_blocks": "metalcore:metals/tin",
+  "valid_fluids": "c:molten/tin",
+  "valid_items": "metalcore:metals/tin",
+  "weathering": false
+}

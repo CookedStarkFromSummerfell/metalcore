@@ -1,0 +1,12 @@
+{
+  "hardening_time": 74,
+  "hardness": 10.4,
+  "melting_point": 1234.0,
+  "overlay_tint_color": 9673402,
+  "resistance": 8.4,
+  "tint_color": 11055840,
+  "valid_blocks": "metalcore:metals/silver",
+  "valid_fluids": "c:molten/silver",
+  "valid_items": "metalcore:metals/silver",
+  "weathering": false
+}

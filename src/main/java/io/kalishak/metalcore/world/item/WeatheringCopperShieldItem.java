@@ -6,14 +6,17 @@ import io.kalishak.metalcore.api.item.WeatheringCopperItem;
 import io.kalishak.metalcore.client.MetalcoreClient;
 import io.kalishak.metalcore.client.renderer.MetalcoreBEWLR;
 import io.kalishak.metalcore.component.MetalcoreComponents;
+import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.core.Holder;
+import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
@@ -23,7 +26,9 @@ import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.ToolAction;
 import net.neoforged.neoforge.common.ToolActions;
+import org.jetbrains.annotations.Nullable;
 
+import java.util.List;
 import java.util.function.Consumer;
 
 public class WeatheringCopperShieldItem extends SimpleWeatheringItem implements Equipable {
@@ -31,8 +36,12 @@ public class WeatheringCopperShieldItem extends SimpleWeatheringItem implements 
     public static final float MINIMUM_DURABILITY_DAMAGE = 3.0F;
 
     public WeatheringCopperShieldItem(Properties pProperties) {
-        super(1.0F, pProperties);
+        super(pProperties);
         DispenserBlock.registerBehavior(this, ArmorItem.DISPENSE_ITEM_BEHAVIOR);
+    }
+
+    public static float getBlockingPredicate(ItemStack stack, @Nullable ClientLevel level, @Nullable LivingEntity entity, int seed) {
+        return entity.isUsingItem() && entity.getUseItem() == stack ? 1.0F : 0.0F;
     }
 
     @Override
@@ -75,5 +84,10 @@ public class WeatheringCopperShieldItem extends SimpleWeatheringItem implements 
                 return MetalcoreBEWLR.INSTANCE;
             }
         });
+    }
+
+    @Override
+    public void appendHoverText(ItemStack stack, TooltipContext cxt, List<Component> tooltip, TooltipFlag flag) {
+        applyTooltip(stack, tooltip);
     }
 }

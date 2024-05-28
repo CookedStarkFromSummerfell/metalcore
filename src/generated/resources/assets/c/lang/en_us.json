@@ -1,4 +1,8 @@
 {
+  "item.metalcore.weathering_state.exposed": "Exposed",
+  "item.metalcore.weathering_state.oxidized": "Oxidized",
+  "item.metalcore.weathering_state.unaffected": "Unaffected",
+  "item.metalcore.weathering_state.weathered": "Weathered",
   "tag.block.c.ores.aluminum": "Aluminum Ores",
   "tag.block.c.ores.lead": "Lead Ores",
   "tag.block.c.ores.silicon": "Silicon Ores",

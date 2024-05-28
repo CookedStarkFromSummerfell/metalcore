@@ -1,42 +1,36 @@
 package io.kalishak.metalcore.world.item;
 
 import io.kalishak.metalcore.Metalcore;
-import io.kalishak.metalcore.api.tier.TierMaterial;
+import io.kalishak.metalcore.api.foundry.TierMaterial;
 import io.kalishak.metalcore.tags.MetalItemTags;
+import net.minecraft.core.Holder;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.Tiers;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.common.SimpleTier;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 public final class MetalcoreTiers {
-    public static final TierMaterial STEEL_VANILLA = new TierMaterial(320, 5.0F, 3.0F, BlockTags.INCORRECT_FOR_IRON_TOOL, 9, Ingredient.of(MetalItemTags.INGOTS_STEEL));
-    public static final TierMaterial COPPER_VANILLA = new TierMaterial(216, 4.0F, 1.5F, BlockTags.INCORRECT_FOR_STONE_TOOL, 11, Ingredient.of(Tags.Items.INGOTS_COPPER));
-    public static final DeferredRegister<TierMaterial> TIERS = DeferredRegister.create(TierMaterial.REGISTRY_KEY, Metalcore.MODID);
+    /*public static final DeferredRegister<Tier> TIERS = DeferredRegister.create(TierMaterial.REGISTRY_KEY, Metalcore.MODID);
 
-    public static final DeferredHolder<TierMaterial, TierMaterial> WOOD = TIERS.register("wood", () -> TierMaterial
-            .ofVanilla(Tiers.WOOD));
-    public static final DeferredHolder<TierMaterial, TierMaterial> STONE = TIERS.register("stone", () -> TierMaterial
-            .ofVanilla(Tiers.STONE));
-    public static final DeferredHolder<TierMaterial, TierMaterial> IRON = TIERS.register("iron", () -> TierMaterial
-            .ofVanilla(Tiers.IRON));
-    public static final DeferredHolder<TierMaterial, TierMaterial> DIAMOND = TIERS.register("diamond", () -> TierMaterial
-            .ofVanilla(Tiers.DIAMOND));
-    public static final DeferredHolder<TierMaterial, TierMaterial> GOLD = TIERS.register("gold", () -> TierMaterial
-            .ofVanilla(Tiers.GOLD));
-    public static final DeferredHolder<TierMaterial, TierMaterial> NETHERITE = TIERS.register("netherite", () -> TierMaterial
-            .ofVanilla(Tiers.NETHERITE));
-
-    public static final DeferredHolder<TierMaterial, TierMaterial> STEEL = TIERS.register("steel", () -> new TierMaterial(
-            320, 5.0F, 3.0F, BlockTags.INCORRECT_FOR_IRON_TOOL, 9, Ingredient.of(MetalItemTags.INGOTS_STEEL))
+    public static final Holder<Tier> STEEL = TIERS.register("steel", () -> new TierMaterial(
+            320, 5.0F, 3.0F, BlockTags.INCORRECT_FOR_IRON_TOOL, 9, () -> Ingredient.of(MetalItemTags.INGOTS_STEEL))
     );
-    public static final DeferredHolder<TierMaterial, TierMaterial> COPPER = TIERS.register("copper", () -> new TierMaterial(
-            216, 4.0F, 1.5F, BlockTags.INCORRECT_FOR_STONE_TOOL, 11, Ingredient.of(Tags.Items.INGOTS_COPPER))
+    public static final Holder<Tier> COPPER = TIERS.register("copper", () -> new TierMaterial(
+            216, 4.0F, 1.5F, BlockTags.INCORRECT_FOR_STONE_TOOL, 11, () -> Ingredient.of(Tags.Items.INGOTS_COPPER))
+    );*/
+    public static final Tier STEEL = new SimpleTier(
+            BlockTags.INCORRECT_FOR_IRON_TOOL,320, 5.0F, 3.0F, 9, () -> Ingredient.of(MetalItemTags.INGOTS_STEEL)
+    );
+    public static final Tier COPPER = new SimpleTier(
+            BlockTags.INCORRECT_FOR_STONE_TOOL, 216, 4.0F, 1.5F, 11, () -> Ingredient.of(Tags.Items.INGOTS_COPPER)
     );
 
     public static void init(IEventBus bus) {
-        TIERS.register(bus);
+        //TIERS.register(bus);
     }
 }
